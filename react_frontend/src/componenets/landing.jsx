@@ -7,7 +7,7 @@ function Landing()
 {
     return(
         <>
-            <h>Welcom to the landing page of Precise Movie Stream.</h> 
+            <h>Welcom to the landing page of <b>Precise Movie Stream.</b></h> 
             <br /> <br />
             <h> This service helps you chose the best movie or serie for you to watch based on your answers to a specific quationaire.</h>
             <br /> <br />
