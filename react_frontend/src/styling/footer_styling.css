@@ -1,0 +1,51 @@
+.footer {
+    /*position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(224, 93, 93);
+    height: 60px;
+    border-top: 1px solid #CCCCCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;*/
+    /* this is from the navbar styling*/
+
+    width: 100%;
+    background-color: #ffffff;
+    height: 50px;
+    border-top: 1px solid #d89393;
+    align-items: center;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: small;
+    /*clear: both;
+    width: 100%;
+    min-height: 16px;
+    background-color: #e7e7e7;
+    padding: 25px 0px 25px 0px;
+    margin: 0 auto;
+    border-top: 1px solid #CCCCCC;*/
+}
+
+.status_text {
+    color: rgb(0, 0, 0);
+    font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+ }
+ .green-dot {  /* use on empty div */
+    width: 15px;
+    height: 15px;
+    background: #00FF00;
+    border-radius: 50%;
+  }
+.red-dot {  /* use on empty div */
+    width: 15px;
+    height: 15px;
+    background: #ff1d1d;
+    border-radius: 50%;
+  }
