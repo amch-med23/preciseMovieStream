@@ -13,6 +13,7 @@ import EmailConfirmation from './componenets/email_confirmation';
 import RegisterSuccess from './componenets/register_success';
 import RandomResultHolder from './componenets/random_result_page';
 import QuationairePageHolder from './componenets/quationaire_page';
+import MediaInfos from './componenets/media_infos';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
         <Route path='/register_success' element={ <RegisterSuccess /> } />
         <Route path='/random_results' element={<RandomResultHolder />} />
         <Route path='/quationair_results' element={ <QuationairePageHolder />} />
-
+        <Route path='media_infos' element={ <MediaInfos />} />
       </Routes>
     </>
   )
