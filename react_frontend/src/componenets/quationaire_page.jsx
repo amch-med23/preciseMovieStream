@@ -8,7 +8,12 @@ function QuationairePageHolder(){
     return(
         <>
         <HomeNavBar />
-        <p>This is the quationaire page:</p>
+        <div className="container">
+            <section>
+                 <p>This is the quationaire page:</p>
+            </section>
+        </div>
+        
         </>
     )
 }
