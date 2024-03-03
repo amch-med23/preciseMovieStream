@@ -24,7 +24,7 @@ function SystemStatus() {
         }).catch(error => {
             console.log("api errors are found");
             let status_paragraph = document.getElementById('status_holder');
-            status_paragraph.innerHTML = '<div className="system_status_failed" style="color: red">&nbsp;API endpoints are not responsing.</div>' ;
+            status_paragraph.innerHTML = '<div className="system_status_failed" style="color: red">&nbsp;API endpoints are not responding.</div>' ;
             let dot_holder = document.getElementById('status-dot');
             dot_holder.innerHTML = '<div class="red-dot"></div>';
                         
