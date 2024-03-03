@@ -26,9 +26,8 @@
 .logo {
     width: 89px;
     height: auto;
-    margin-left: 20px;
     margin: auto;
-    margin-left: 20px;
+    margin-left: 8px;
     box-sizing: border-box;
     border: 0;
 }
@@ -55,4 +54,5 @@ img {
 }*/
 .navbar_btn  {
     margin-right: 6px;
+    
 }

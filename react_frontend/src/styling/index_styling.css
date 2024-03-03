@@ -151,14 +151,20 @@ button:focus-visible {
   font-size: small;
   width: 400px;
   height: auto;
-  margin-right: 89px;
+  margin: 50px;
 }
 .quationaire_movie_div {
   text-align: center;
   font-size: small;
   width: 400px;
   height: auto;
-  margin-left: 89px;
+  margin: 50px;
+}
+.info_about_movie_div {
+  font-size: small;
+  width: 400px;
+  height: auto;
+  margin: 50px;
 }
 .home_main_selection_section {
   display: flex;
@@ -169,7 +175,7 @@ button:focus-visible {
   align-items: flex-start;
   justify-items: center;
   width: auto;
-  height: 500px;
+  height: auto;
   margin: 40px;
 }
 .home_welcom_section {
@@ -182,4 +188,104 @@ button:focus-visible {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
+}
+.user_greetings {
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  margin: 10px;
+  
+}
+.user_name {
+  color: #ff0000;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.media_info_section {
+  text-align: center;
+  font-size: medium;
+  width: 400px;
+  height: auto;
+  margin: 50px;
+  background-color: #f7f7f7;
+}
+.requested_media_div {
+  text-align: left;
+  font-size: small;
+  width: auto;
+  height: auto;
+  margin: 50px;
+}
+.data_enty_div {
+  margin: 10px;
+}
+.movie_info_btn {
+  margin: 10px;
+}
+.movie_infos_result{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+}
+.container_movie_info{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.movie_not_found {
+  color: red;
+  margin: 8px;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;;
+}
+.omdb_res_txt {
+  margin: 7px;
+  color: rgb(0, 0, 0);
+  background-color: greenyellow;
+}
+.plot_text {
+  font-size: small;
+  color: red;
+  margin: 4px;
+  width: 500px;
+}
+
+.movie_text_holder {
+  margin: 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: greenyellow;
+  width: 660px;
+}
+.res_data_text{
+  background-color: rgb(233, 250, 206);
+  margin: 4px;
+}
+.key_h {
+  font-size: medium;
+  text-align: left;
+  margin: 4px;
+
+}
+.value_h {
+  font-size: small;
+  margin: 4px;
+}
+
+.rating_key_h {
+    font-size: small;
+    margin: 4px;
+    margin-left: 60px;
 }
