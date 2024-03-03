@@ -33,6 +33,10 @@ function Home()
        alert("redirecting to result_page, with no parameters.");
        navigate('/random_results');
     }
+    function movie_infos_result_submit(){
+        alert("navigating to movie details page, with no parameters");
+        navigate('/media_infos');
+    }
 
 
     // so in here we just need to check if the 'pms_user_name' and 'pms_ogi_token' are not null befour we handle the user data.
@@ -42,7 +46,7 @@ function Home()
             <div className="container">
                 <section className="home_welcom_section">
                     <br />
-                    <h style={{color: "black"}}>Welcome back&nbsp; <b><h id="inter_user_name" style={{color: "red"}}> {user_name}</h></b> ,we are glad you are here.</h>
+                    <h className="user_greetings">Welcome back&nbsp; <h id="inter_user_name" className="user_name"> {user_name}</h> ,we are glad you are here.</h>
                     <br/> <br />
 
                 </section>
@@ -53,7 +57,11 @@ function Home()
                     </div>
                     <div className="quationaire_movie_div">
                         <button onClick={ quationaire_result_submit }>Submit your interests</button>
-                        <p>By clicking this you will be submitting a form so we can know you better. and this will result in a list of movies and series recommanded for you.</p>
+                        <p>By clicking this you will be submitting a form so we can know you better. <h style={{color: 'red'}}>and this will result in a list of movies and series recommanded for you.</h></p>
+                    </div>
+                    <div className="info_about_movie_div">
+                        <button onClick={ movie_infos_result_submit }>Get public informations about a movie/serie</button>
+                        <p>By clicking this you will get public inforamtions about the movie/serie title you want. <h style={{color: 'red'}}>(we are using Omdb database)</h></p>
                     </div>
                 </section>
 
