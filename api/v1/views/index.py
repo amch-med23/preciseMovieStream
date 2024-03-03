@@ -106,13 +106,3 @@ def login():
 
     print("status_obj is : {}".format(login_creds_check_obj)) # login_creds_check_obj will have two keys (login_creds_check, logn_token), values will be set by login_creds_check(data).
     return make_response(jsonify(login_creds_check_obj), 200)
-
-
-@app_views.route('/random_movies', methods=['GET'],
-                 strict_slashes=False)
-def random_results():
-    """ getting the random content from the api. """
-    if not request.is_json:
-        abort(404, 'Not a JSON')
-
-    return make_request(jsonify({'movis': 'some random content'}), 200)
