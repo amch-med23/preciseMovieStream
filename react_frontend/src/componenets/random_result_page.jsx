@@ -8,7 +8,7 @@ function RandomResultHolder(){
 
     function getRandomresults() {
         const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
-        axios.get(apiEndPoint.concat('random_movies')).then(res => {
+        axios.get(apiEndPoint.concat("random_result")).then( res => {
             let data = res.data;
             console.log('returned data is: ' + data);
         });
@@ -16,8 +16,12 @@ function RandomResultHolder(){
     return(
         <>
         <HomeNavBar />
-            <p>This is the random result of your requeste:</p>
-            { getRandomresults() }   
+        <div className="container">
+            <section>
+                <p>This is the random result of your requeste:</p>
+                { getRandomresults() }      
+            </section> 
+            </div>
         </>
     )
 }
