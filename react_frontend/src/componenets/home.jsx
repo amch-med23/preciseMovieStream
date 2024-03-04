@@ -23,18 +23,18 @@ function Home()
     //name_paragrarph.innerHTML = '<div style="color: red;">user_name</div>';
 
     function quationaire_result_submit() {
-        //window.alert("redirecting to result_page, with the username and email address, with an additional parameter 'quationaire:true' to show you the submit form.");
-        alert("redirecting to result_page, with the username and email address, with an additional parameter 'quationaire:true' to show you the submit form.");
+        
+        //redirecting to result_page, with the username and email address, with an additional parameter 'quationaire:true' to show you the submit form.
         navigate('/quationair_results'); //we need to pass the params in here.
     }
 
     function random_result_submit(){
        //window.alert('redirecting to result_page, with no parameters.');
-       alert("redirecting to result_page, with no parameters.");
+       //alert("redirecting to result_page, with no parameters.");
        navigate('/random_results');
     }
     function movie_infos_result_submit(){
-        alert("navigating to movie details page, with no parameters");
+        //alert("navigating to movie details page, with no parameters");
         navigate('/media_infos');
     }
 
