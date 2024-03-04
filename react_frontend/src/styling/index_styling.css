@@ -243,7 +243,7 @@ button:focus-visible {
 .movie_not_found {
   color: red;
   margin: 8px;
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 .omdb_res_txt {
   margin: 7px;
@@ -288,4 +288,31 @@ button:focus-visible {
     font-size: small;
     margin: 4px;
     margin-left: 60px;
+}
+.rendom_movies_first_section {
+  color: #000000;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-size: medium;
+  width: 700px;
+  margin: 4px;
+}
+.random_movies_result_holder_section {
+  margin: 4px;
+}
+.random_movie_title {
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-size: small;
+  color: #ff1e00;
+}
+
+.div_random_movie_element {
+  margin: 20px;
+}
+.random_movies_result_holer_div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
