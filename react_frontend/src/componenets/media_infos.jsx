@@ -104,7 +104,7 @@ function MediaInfos(){
                     <div className="requested_media_div">
                         <form onSubmit={handleSubmit}>
                             <div className="data_enty_div">
-                            <h>Movie title: &nbsp;</h>
+                            <h>Movie title: * &nbsp;</h>
                             <input id="media_title" placeholder="movie/serie title" required></input>
                             </div>
                             
