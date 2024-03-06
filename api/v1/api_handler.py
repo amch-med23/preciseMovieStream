@@ -62,7 +62,7 @@ def get_media_ids():
             f.write(json_list) 
     
     available_media_ids = final_ids_list
-
+    
     return available_media_ids
 
 def media_infos(obj):
@@ -81,9 +81,109 @@ def media_infos(obj):
 
     return data
 
-def recommended_movies():
+def recommended_movies(data):
     """ returning a random res of movies """
-    return
+    
+
+    # the gathered data is already foramtted by the front-end.
+    # this data contains a user_name and an email_address of the user requesting the response.
+    # we gonna make a request by search to the omdb data base with the elements of key_words, and append each response
+    # to a list 'key_words_res_list', and make a request for the liked_movies items and append them to a list 'liked_movies_list'. then make a request
+    omdb_api = "https://www.omdbapi.com/?apikey=5fa754f9"
+    
+    
+    qua_user_name = data['user_name']
+    qua_user_email = data['user_email']
+
+    keywords_result_list = []
+    liked_movies_result_list = []
+    
+    if data['type'] == 'any':
+        """ here am dealing with the type of media the user requested, and this will be present in the calls """
+    
+        if data['year'] == '':
+            """ don't append the no year parameter in the request """
+            for i in data['keywords']:
+                res_content = requests.get(omdb_api + '&s=' + i).content
+                res_data = json.loads(res_content.decode('utf-8'))
+                if res_data['Response'] == 'True':
+                    keywords_result_list.append(res_data['Search'])
+        else:
+            """ calls with the year parameter """
+            for i in  data['keywords']:
+                res_content = requests.get(omdb_api + '&s=' + i + '&y=' + data['year']).content
+                res_data = json.loads(res_content.decode('utf-8'))
+                if res_data['Response'] == 'True':
+                    keywords_result_list.append(res_data['Search'])
+        
+        # here we make calls to the api using the provided previouselly liked movies
+        if data['liked_movies'] == ['']:
+            """ dont make calls to liked movies"""
+            liked_movies_result_list = []
+        else:
+            """ make calls to liked movies elements """
+            for i in data['liked_movies']:
+                res_content = requests.get(omdb_api + '&s=' + i).content
+                res_data = json.loads(res_content.decode('utf-8'))
+                if res_data['Response'] == 'True':
+                    liked_movies_result_list.append(res_data['Search'])
+
+    else:
+        """ here we make calls using the '&type=' parameter in the url """
+        
+        if data['year'] == '':                                                                 
+            """ don't append the no year parameter in the request """                          
+            for i in data['keywords']:                                                         
+                res_content = requests.get(omdb_api + '&s=' + i + '&type=' + data['type']).content
+                res_data = json.loads(res_content.decode('utf-8'))
+                if res_data['Response'] == 'True':
+                    keywords_result_list.append(res_data['Search'])                                          
+        else:                                                                                  
+            """ calls with the year parameter """                                              
+            for i in  data['keywords']:                                                        
+                res_content = requests.get(omdb_api + '&s=' + i + '&y=' + data['year'] + '&type=' + data['type']).content
+                res_data = json.loads(res_content.decode('utf-8'))
+                if res_data['Response'] == 'True':
+                    keywords_result_list.append(res_data['Search'])                                          
+                                                                                               
+        # here we make calls to the api using the provided previouselly liked movies           
+        if data['liked_movies'] == ['']:                                                       
+            """ dont make calls to liked movies"""                                             
+            liked_movies_result_list = []                                                      
+        else:                                                                                  
+            """ make calls to liked movies elements """                                        
+            for i in data['liked_movies']:                                                     
+                res_content = requests.get(omdb_api + '&s=' + i).content 
+                res_data = json.loads(res_content.decode('utf-8'))
+                if res_data['Response'] == 'True': 
+                    liked_movies_result_list.append(res_data['Search'])
+
+    # as of now, we have two lists of results 'liked_movies_result_list' and 'keywords_result_list'
+    # these two lists contain the results of the calls to omdb api with the provided parameters.
+
+    # now we either send them as an object to the front_end or we process them then we send them.
+
+    # the resulted object here must contains tree keys: 'result', 'probability_rate', 'Response', the probability rate
+    # value will be determined using our algorithm. and the Response will be True if all the elements of both lists
+    # (kewords_result_list, liked_movies_result_list) have no Error value for 'their own Response key'.
+
+    # the result will be the two generated lists.
+
+    # i thinks we eed to take relevant API keys from the result request, or we can just append them as is (the 2nd option is used for now.)
+
+    #print("this is the keywords_result length {}, and the resut {}".format(len(keywords_result_list), keywords_result_list))
+    #print('--------------')
+    #print("this is the liked_movies_result length {}, and the resut {}".format(len(liked_movies_result_list), liked_movies_result_list))
+
+    obj_dict = {}
+    
+    obj_dict['keywords_result'] = keywords_result_list
+    obj_dict['liked_movies_result'] = liked_movies_result_list
+
+    return obj_dict
+
+
+
 
 def random_results():
     """gets random results"""
@@ -119,12 +219,18 @@ def random_results():
 
     return final_random_movies_list
 
+def movies_imdb_ids():
+    """ getting the nmber of mvies available from the local pool. """
+    # reading the imdb_ids file.
+    with open('imdb_ids', 'r') as f:
+        json_data = json.load(f) # here just load the json data from the file, don't read the file then load the data from the object you read.
 
+
+    media_ids_number =len(json_data)
+
+    return media_ids_number
+    
 if __name__ == "__main__":
     """ invoking the script directelly """
     print("invoking...")
-    imdb_ids = get_media_ids()
-    for k in imdb_ids:
-        print('id: {}'.format(k))
-    print('len is: {}'.format(len(imdb_ids)))
-    # we must base the check on the 'Response' value, True means we have a hit, false means no movies found
+    
