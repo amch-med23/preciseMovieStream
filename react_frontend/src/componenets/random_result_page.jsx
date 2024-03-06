@@ -9,12 +9,10 @@ import HomeNavBar from "./home_navbar";
 function RandomResultHolder(){
     // get the button object
     const [isButtonDisabled, setIsButtonDisabled] = useState(false) ;
+    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
 
     async function getRandomresults() {
-        const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
-        
-        
-    
+
         try {
             setIsButtonDisabled(true); // disabling the button befour fetching the data
             const response = await axios.get(apiEndPoint.concat('movie_random'));
@@ -52,23 +50,37 @@ function RandomResultHolder(){
             console.log('Errors occured while retreiving random movies: ' + error);
             
         }
-
-        
         
     }
+    // getting the number of elements from movies pool in the back-end.
+        
+   
+        let warning_paragraph = document.getElementById('movies_pool_warning');
+        axios.get(apiEndPoint.concat('number_imdb_id')).then( res => {
+            let movie_ids_number = res.data['num_imdb_ids'];
+            warning_paragraph.innerHTML = `<div class="random_head_line_notice_2"><h class="notice_2_text">The Movies pool which you are getting the results from is not all imdb content,
+             but instead we have gathered the best <h style="color: red;">${movie_ids_number}</h> movie IDs to randomely chose from.<h style="color: red; font-size: small">(This was done to limit the number of calls we make to
+                 imdb database for each request)</h></h></div>`;
+            
+        }).catch(error => {
+            //console.log('Error occured while retreiving the number of movie ids: ' + error);
+        });
+       
+ 
+    
     return(
         <>
         <HomeNavBar />
         <div className="container_movie_info">
             <section className="rendom_movies_first_section">
-                <p>We are returning a list of 10 movies per request since our omdb API calls are limited.</p>
-                <p>The Movies pool wich you are getting the results from is not all imdb content, but instead we have gathered ~2180 movie IDs to randomelly chose from.<h style={{color: "red", fontSize: "small"}}>(This was done to limit the number of calls we make to imdb database for each request)</h></p>
+                <div className="random_headline_notice">We are returning a list of 10 movies per request since our omdb API calls are limited.</div>
+                <div id="movies_pool_warning"></div>
                 <button style={{margin : "10px"}} onClick={async() => {setIsButtonDisabled(true); await getRandomresults()}} disabled={isButtonDisabled}  id="random_btn">{ isButtonDisabled ? 'Loading data ...' : 'Get random Suggestions'}</button>
                     
             </section>
 
             <section className="random_movies_result_holder_section">
-                <div id="div_random_movies_holder" className="random_movies_result_holer_div"></div>
+                <div id="div_random_movies_holder" className="random_movies_result_holer_div" ></div>
 
             </section> 
         </div>
