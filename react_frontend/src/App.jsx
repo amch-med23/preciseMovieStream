@@ -8,7 +8,7 @@ import Login from './componenets/login';
 import Register from './componenets/register';
 import About from './componenets/about';
 import GuestProceed from './componenets/guest_proceed';
-import GuestHome from './componenets/guest_home';
+import GuestRandomMoviesPage from './componenets/guest_random_movies.jsx';
 import EmailConfirmation from './componenets/email_confirmation';
 import RegisterSuccess from './componenets/register_success';
 import RandomResultHolder from './componenets/random_result_page';
@@ -26,7 +26,7 @@ function App() {
         <Route path='/home' element={ <Home />} />
         <Route path='/about' element={ <About /> } />
         <Route path='/guest_proceed' element={ <GuestProceed />} />
-        <Route path='/guest_home' element={ <GuestHome />} />
+        <Route path='/guest_random_movies_page' element={ <GuestRandomMoviesPage />} />
         <Route path='/email_confirmation' element={ <EmailConfirmation />} />
         <Route path='/register_success' element={ <RegisterSuccess /> } />
         <Route path='/random_results' element={<RandomResultHolder />} />
