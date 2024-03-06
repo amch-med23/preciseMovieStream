@@ -23,9 +23,9 @@ function Home()
     //name_paragrarph.innerHTML = '<div style="color: red;">user_name</div>';
 
     function quationaire_result_submit() {
-        
+
         //redirecting to result_page, with the username and email address, with an additional parameter 'quationaire:true' to show you the submit form.
-        navigate('/quationair_results'); //we need to pass the params in here.
+        navigate('/quationair_results', {'state': {'user_name': user_name, 'user_email': user_email}}); //we need to pass the params in here.
     }
 
     function random_result_submit(){
@@ -55,7 +55,7 @@ function Home()
                         <button onClick={ random_result_submit }>See random mvoies from random categories</button>
                         <p> By clicking this you will see the result of a random movies or series list that you can watch. <h style={{color :"red"}}>remember this has no link to your interrests. The results are random</h></p>
                     </div>
-                    <div className="quationaire_movie_div">
+                    <div className="home_quationaire_movie_div">
                         <button onClick={ quationaire_result_submit }>Submit your interests</button>
                         <p>By clicking this you will be submitting a form so we can know you better. <h style={{color: 'red'}}>and this will result in a list of movies and series recommanded for you.</h></p>
                     </div>
