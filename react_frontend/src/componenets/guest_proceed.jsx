@@ -14,15 +14,15 @@ function GuestProceed()
         <NavBar />
             <div className="container">
                 <section>
-                    <h>You are trying to access the Guest page. This permits access to the system functionalities for users without a registred account.</h>
+                    <h>You are trying to access the Guest page. This permits access to one system functionaly (getting random movies) without a registred account.</h>
                      <br />
                     <br />
-                    <h> We recommend you to create an account so we can know you better, and that way the results can be more accurate.</h> 
+                    <h> We recommend you to create an account so we can know you better, and that way the results can be more accurate plus you wil endjoy all system functionalities.</h> 
                     <br />
                     <br />
-                    <Link to="/"> <button>Go Back</button></Link>
+                    <Link to="/register"> <button>Create an account</button></Link>
                     &nbsp; &nbsp;
-                    <Link to="/guest_home"><button>Proceed anyway</button></Link>
+                    <Link to="/guest_random_movies_page"><button>Proceed anyway</button></Link>
                 </section>
             
             </div>
