@@ -3,6 +3,8 @@
 
 from random import randint
 import json
+import requests
+from flask import jsonify
 
 
 def handle_email(session_id, user_email):
@@ -20,6 +22,23 @@ def handle_email(session_id, user_email):
         session_id = str(session_id)
         # now we send an email containing this code. to the address "user_email", using a template.
 
+        ver_code_obj = {}
+        ver_code_obj['ver_code'] = str(ver_code)
+        ver_code_obj['user_email'] = str(user_email)
+        
+        ver_code_json = json.dumps(ver_code_obj)
+        print(ver_code_json)
+        
+        res = requests.post('http://0.0.0.0:5000/api/v1/send_ver_code', json = ver_code_json).content
+
+        res_data = json.loads(res.decode('utf-8'))
+        
+        
+        if res_data['status'] == "500":
+                print('Errors encountred while sending the email.')
+        else:
+                print('The email was sent successfully')
+        
         # now the generation is done, we will create the 'ver_email_obj', and we will store it, then return it.
         ver_email_obj = {"session_id": session_id, "user_email": user_email, "ver_code": str(ver_code)}
 
