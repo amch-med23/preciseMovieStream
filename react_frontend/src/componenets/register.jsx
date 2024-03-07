@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import '../styling/index_styling.css';
+import { useState } from "react";
 import axios from "axios";
+
+import '../styling/index_styling.css';
 
 import NavBar from './navbar.jsx';
 import Footer from './footer.jsx';
@@ -10,8 +12,10 @@ import Footer from './footer.jsx';
 function Register()
 {
     const navigate = useNavigate();
+    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-    function handleSubmit(event){
+   async function handleSubmit(event){
         event.preventDefault() // this is to prevent the default form behaiviour
         let user_name =  document.getElementById('user_name').value;
         let email = document.getElementById('email').value;
@@ -30,9 +34,13 @@ function Register()
        
         console.log(user_data); // testing the user data.
         // sending the user data to the back end.
-        
-        const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
-        axios.post(apiEndPoint.concat('register'), user_data).then(res => {
+
+        try {
+
+            setIsButtonDisabled(true) // disable the button after pressing the button
+            let res = await axios.post(apiEndPoint.concat('register'), user_data);
+            setIsButtonDisabled(false) // re-enabling the button after the post request success
+
             console.log("the back_end status of email is: " + res.data['email_check']);
             console.log("the back_end status of password is : " + res.data['password_check']);
             // the returned result check.
@@ -64,8 +72,15 @@ function Register()
                 let session_id = res.data['session_id'];
                 navigate('/email_confirmation', {'state':{'email': user_email, 'session_id': session_id, 'user_name': user_name, 'password':passwd}});
             }
-            
-        });
+
+        } 
+        catch(error) {
+                console.log('Error has occured while trying to register: ' + error);
+
+        }
+        
+        
+        
     }
 
     return(
@@ -101,7 +116,7 @@ function Register()
                                     <input type="password" id="password_conf" required minLength={8} placeholder="reenter your password"></input>
                                 </div>
                             
-                                <button type="submit">Submit</button>
+                                <button type="submit" disabled = {isButtonDisabled}>{ isButtonDisabled ? 'Registering...' : 'Submit'}</button>
                             </form>
                     </div>
                 </section>
