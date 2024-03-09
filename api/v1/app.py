@@ -19,14 +19,12 @@ app.config['MAIL_PASSWORD'] = '5c6e18c89607cad63b8d28123ef8bbde'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
-
-app.register_blueprint(app_views, url_prefix='/api/v1')
-
-@app.errorhandler(404)
-def not_found(e):
-    return {"error":"Not Found"}, 404
-
-
 if __name__ == "__main__":
-    "invoking the script directely"
+    app.register_blueprint(app_views, url_prefix='/api/v1')
+
+    @app.errorhandler(404)
+    def not_found(e):
+        return {"error":"Not Found"}, 404
+    
+    
     app.run("127.0.0.1", "5000", threaded=True)
