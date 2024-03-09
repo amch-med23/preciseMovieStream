@@ -7,4 +7,4 @@ app_views = Blueprint('app_views', __name__)
 
 from api.v1.views.index import *
 from api.v1.views.results import *
-from api.v1.email_sender import *
+from api.v1.views.email_sender import *
