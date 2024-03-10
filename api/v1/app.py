@@ -16,7 +16,7 @@ cors = CORS(app, resources= {r'/*': {'origins': '*'}})
 app.config['MAIL_SERVER'] = 'live.smtp.mailtrap.io'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'api'
-app.config['MAIL_PASSWORD'] = '5c6e18c89607cad63b8d28123ef8bbde'
+app.config['MAIL_PASSWORD'] = '30483d66a80a310c9bdbd550ca4791a7'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 

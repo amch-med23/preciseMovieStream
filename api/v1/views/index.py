@@ -90,6 +90,10 @@ def email_verify():
             # register the user_obj to the database table of 'users'.
             registration_status = register_user(user_obj)
             print(registration_status)
+            # after registering this user it's a goodidea to remove the ver_obj instance from the database
+            # this will help improve the app performence
+
+            """ removing the instance will be done in here. """
 
         else:
             """ verification status is failed """
