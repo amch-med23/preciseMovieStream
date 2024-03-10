@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from '../assets/pms_logo.png';
 import '../styling/nav_styling.css';
 
 export default class NavBar extends React.Component {
@@ -13,7 +13,7 @@ export default class NavBar extends React.Component {
     {
         return (
             <div className="navbar">
-                <img src='src/assets/sand_tech.png' className='logo'></img>
+                <img src={logo} className='logo'></img>
 
                 <Link to="/"><button className='navbar_btn'>Landing</button></Link>
                 <Link to="/about"><button className='navbar_btn'>About us</button></Link> 
