@@ -6,6 +6,8 @@ import uuid
 from api.v1.data_checker import data_check
 from api.v1.email_handler import handle_email
 from api.v1.login_handler import login_creds_check
+from api.v1.DB_handler import *
+
 
 @app_views.route("/status", methods=['GET'],
                  strict_slashes=False)
@@ -38,7 +40,7 @@ def register():
         user_email = data['email']
         
         handle_email(session_id, user_email)
-        # the above function will generate the 6 digit ver_code and send the email + we save the email verification instance in a didicated Database table
+        # the above function will generate the 6 digit ver_code and send the email + save the email verification instance in a didicated Database table
 
         return make_response(jsonify({"email_check":"passed", "password_check":"passed", "user_email": user_email, "session_id": session_id}), 200)
 
@@ -50,44 +52,55 @@ def register():
 @app_views.route("/verify_email", methods=['POST'],
                  strict_slashes=False)
 def email_verify():
-    """ here we generate a random 8 digits number and we send them to the user email, to verify."""
+    """ here we generate a random 6 digits number 
+    and we send them to the user email, to verify the email before registering."""
+    
     if not request.is_json:
         abort(400, 'Not a JSON')
 
     data = request.get_json()
     # in here we will read from the storage engine the obj with the requested session_id and user_email.
     # then we will verifi the value of the 'ver_digit' associated with the keys ('session_id', 'user_email')
-    # and we compare it with the what the user inputed from the fron-end.
-
-    # in here we need to read the email_verification_table from the Database, and we fetch data according to the data['user_email']
-
-    with open('email_ver_list', 'r', encoding='utf- 8') as f:
-        email_file_obj = f.read()
-        email_ver_obj = json.loads(email_file_obj)
-
-    print("we got the confirmation from the front_end as : {}".format(data))
-    print("we got the confirmation from the database as : {}".format(email_ver_obj))
-    # after checking 'data' against 'email_ver_obj', we return the 'verification_status' value ['verified', 'not_verified']
-    ver_status_obj = {}
+    # and we compare it with the value of what the user inputed from the fron-end.
     
-    # the verification table has ('user_email', 'session_id', 'ver_code'),  the request data has('email', 'user_name', 'session_id', 'password', 'ver_code')
-    if data['email'] == email_ver_obj['user_email'] and data['session_id'] == email_ver_obj['session_id'] and data['ver_code'] == email_ver_obj['ver_code']:
-        # this will check the keys, values in both.
-        ver_status_obj["verification_status"] = "verified"
+    """ we need to filter by session_id, since the email address 
+    can be duplicated (multiple unfinished attempts by the user) """
+    
+    email_ver_obj = get_ver_codes()
+    db_ver_dict = {}
+    # ok now after we got the ver codes objects list from the datbase:
+    # we need to filter through it and select the object by sessin_id.
+    for instance in email_ver_obj:
+        if instance['session_id'] == data['session_id']:
+            # this is the instance we want.
+            db_ver_dict = instance
 
-        user_obj = {}
-        user_obj['email'] = data['email']
-        user_obj['password'] = data['password']
-        user_obj['user_name'] = data['user_name']
-        # when the user is verified, we gonna register him in the DB
+    ver_status_obj = {} # verification_status holder
+    #print('the selected instance from the db is: {}'.format(db_ver_dict))
+    if db_ver_dict:
+        """ the db ver object is not null so this is what we are gonna operate on """
+        if data['email'] == db_ver_dict['user_email'] and data['ver_code'] == db_ver_dict['ver_code']:
 
-        # register the user_obj to the database table of 'users' ('users' is the table where we store the registered users).
-        
-        print("we are registering this user {} to database.".format(user_obj))
-        
+            ver_status_obj["verification_status"] = "verified"
+            user_obj = {}
+            user_obj['user_email'] = data['email']
+            user_obj['password'] = data['password']
+            user_obj['user_name'] = data['user_name']
+            # when the user is verified, we gonna register him in the DB                                               
+            # register the user_obj to the database table of 'users'.
+            registration_status = register_user(user_obj)
+            print(registration_status)
+
+        else:
+            """ verification status is failed """
+            ver_status_obj["verification_status"] = "not_verified"
     else:
-        ver_status_obj["verification_status"] = "not_verified"
-
+        """ the db ver object is null this means errors occured while saving the code to the DataBase."""
+        print(' the db object is null this means errors ocured while saving the code to database, No users have been registered.')
+        ver_status_obj['verification_status'] = 'not_verified'
+        
+    # the verification table has the folowing keys ('user_email', 'session_id', 'ver_code'),  the request data has the folowing keys ('email', 'user_name', 'session_id', 'password', 'ver_code')
+        
     print("verfication_status is : {}".format(ver_status_obj['verification_status']))
 
     return make_response(jsonify(ver_status_obj), 200)
@@ -100,9 +113,9 @@ def login():
     if not request.is_json:
         abort(400, 'Not a JSON')
     data = request.get_json()
-    print("we got this: {}".format(data))
+    
     # check if the user credentials are ok.
-    login_creds_check_obj = login_creds_check(data) # this will check the credentials,in case of 'pssed'(will return a login_token, this will be stored in the browser local_storage, and will be removed when logout[the toen remove state can be sent back here, for the active sessions counting (number of current logedin users.)] )
+    login_creds_check_obj = login_creds_check(data) # this will check the credentials,in case of 'passed'(will return a login_token, this will be stored in the browser local_storage, and will be removed when logout[the token remove state can be sent back here, for the active sessions counting (number of current logedin users.)] )
 
     print("status_obj is : {}".format(login_creds_check_obj)) # login_creds_check_obj will have two keys (login_creds_check, logn_token), values will be set by login_creds_check(data).
     return make_response(jsonify(login_creds_check_obj), 200)
