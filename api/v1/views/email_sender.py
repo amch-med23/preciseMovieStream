@@ -26,7 +26,7 @@ def send_ver_code():
                         user_email = data['user_email']
                         email_content = data['email_html']
                         print('email content is: {}'.format(email_content))
-                        msg = Message(subject='Your preciseMovieStream email verification code.', sender='mailtrap@demomailtrap.com', recipients=[user_email])
+                        msg = Message(subject='Your preciseMovieStream email verification code.', sender='no-replay@losag.tech', recipients=[user_email])
                         msg.html = email_content
                         mail.send(msg)
                         status_code = 200
