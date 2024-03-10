@@ -5,7 +5,7 @@ from random import randint
 import json
 import requests
 from flask import jsonify
-
+from api.v1.DB_handler import *
 
 def handle_email(session_id, user_email):
         """ we generate a 6 digit number and we send an email containing it + 
@@ -41,14 +41,19 @@ def handle_email(session_id, user_email):
                 print('The email was sent successfully')
         
         # now the generation is done, we will create the 'ver_email_obj', and we will store it, then return it.
-        ver_email_obj = {"session_id": session_id, "user_email": user_email, "ver_code": str(ver_code)}
+        ver_email_obj = {"session_id": str(session_id), "user_email": user_email, "ver_code": str(ver_code)}
 
-        #storing this data in a file (for now, but after the whole code will be using DB for storage)
-        """ this is very wrong [we need to use append, and store object by key, value [key]: {value}] """
+        # storing in th DataBase
+        """ this saves the ver_email_obj in 'cer_code' table, 
+        we need to select by session id sinse the email can duplicated"""
+        
+        save_ver_code(ver_email_obj) 
+        
+        """
         with open('email_ver_list', 'w', encoding='utf-8') as f:
                 json_email_obj = json.dumps(ver_email_obj)
                 f.write(json_email_obj)
-
+        """
 
 
 if __name__ == "__main__":
