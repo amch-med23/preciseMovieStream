@@ -4,10 +4,10 @@
 from flask import make_response, jsonify, abort, request
 from api.v1.views import app_views
 import json
-from api.v1.api_handler import random_results
-from api.v1.api_handler import media_infos
-from api.v1.api_handler import recommended_movies
-from api.v1.api_handler import movies_imdb_ids
+from models.api_handler import random_results
+from models.api_handler import media_infos
+from models.api_handler import recommended_movies
+from models.api_handler import movies_imdb_ids
 
 @app_views.route('/random_result', methods=['GET'],
                  strict_slashes=False)

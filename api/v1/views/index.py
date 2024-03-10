@@ -3,10 +3,10 @@ from api.v1.views import app_views
 from flask import jsonify, make_response, request, abort 
 import json
 import uuid
-from api.v1.data_checker import data_check
-from api.v1.email_handler import handle_email
-from api.v1.login_handler import login_creds_check
-from api.v1.DB_handler import *
+from models.data_checker import data_check
+from models.email_handler import handle_email
+from models.login_handler import login_creds_check
+from models.storage_engine.DB_handler import *
 
 
 @app_views.route("/status", methods=['GET'],
