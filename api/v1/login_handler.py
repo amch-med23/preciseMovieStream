@@ -2,28 +2,26 @@
 """ this is a login credential checker """
 
 import uuid
-
+from api.v1.DB_handler import get_users
 
 def login_creds_check(data):
     """ this checks the passed dict attributes against the Database 'users' table content """
-    # the data has two attributes, 'user_email', 'user_password'. we need to get the result of the 'users' table from Database and check agains the resulted dictionary for matches in 'user_emails' and the corresponding 'user_password'. when success return  a dict with two keys ['login_creds_check' ('passed', 'failed'), 'login_token' ('', 'str(uuid.uuid4)')]
+    # the data has two attributes, 'user_email', 'user_password'. we need to get the result of the 'users' table from Database and check agains the resulted dictionary for matches in 'user_emails' and the corresponding 'user_password'. this returns a dict with two keys ['login_creds_check' ('passed', 'failed'), 'login_token' ('', 'str(uuid.uuid4)')]
 
     login_creds_obj = {}
     reg_users = [] # will contain the Database 'users' table content.
     # we make a dictionary from the results of 'users' table and store it in reg_users.
     # this is just a test data, for now.
-    reg_users.append({'id': 1, 'email': 'reg1@email.com', 'password': 'password1', 'user_name': 'reg1'})
-    reg_users.append({'id': 2, 'email': 'reg2@email.com', 'password': 'password2', 'user_name': 'reg2'})
-    reg_users.append({'id': 3, 'email': 'reg3@email.com', 'password': 'password3', 'user_name': 'reg3'})
+    reg_users = get_users()
 
     # now we check the passed data dict.
-    print("the DB users list is: {}".format(reg_users))
+    #print("the DB users list is: {}".format(reg_users))
 
     i = 0
     print(len(reg_users))
     while i < len(reg_users):
         """ check the data attr"""
-        if data['user_email'] == reg_users[i]['email'] and data['user_password'] == reg_users[i]['password']:
+        if data['user_email'] == reg_users[i]['user_email'] and data['user_password'] == reg_users[i]['password']:
             # generate the uuid.uuid4 and assign it to 'login_token'
             # set 'login_creds_check' to 'pass'
             # add this to login_creds-obj and return it.
@@ -31,7 +29,7 @@ def login_creds_check(data):
             login_creds_obj['login_token'] = str(login_token)
             login_creds_obj['login_creds_check'] = 'passed'
             login_creds_obj['user_name'] = reg_users[i]['user_name']
-            login_creds_obj['user_email'] = reg_users[i]['email']
+            login_creds_obj['user_email'] = reg_users[i]['user_email']
             
             return login_creds_obj
         i = i + 1
