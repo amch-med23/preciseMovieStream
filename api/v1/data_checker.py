@@ -2,6 +2,8 @@
 """ this is checking the data passed from the register view """
 # we need to import storage, in order to retreive the registered users in the system.(for email checking)
 
+from api.v1.DB_handler import get_users
+
 def data_check(data_obj):
     """ checks the user register data passed by object. """
 
@@ -20,8 +22,13 @@ def data_check(data_obj):
         new_obj['password_check'] = 'passed'
         print("the password is valid")
 
-    # retreaive the mails list from the DB and check against the 'user_email'.
-    db_email_list = ['used1@email.com','used2@email.com'] # this is mock data for now,
+    # retreaive the users list from the DB.
+    db_users_list = get_users()
+    
+    db_email_list = []
+    # retreives the emails and check against the user provided email
+    for instances in db_users_list:
+        db_email_list.append(instances['user_email'])
     
     if user_email in db_email_list:
         """ we add the failed attribute to the 'email_check' key. """
