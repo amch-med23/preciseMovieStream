@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -11,7 +11,8 @@ function EmailConfirmation(){
 
     const navigate = useNavigate();
     const location = useLocation();
-    const apiEndPoint = "http://wsl.localhost:5000/api/v1/"
+    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const [ isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     let user_email = location.state.email;
     let session_id = location.state.session_id;
@@ -20,7 +21,7 @@ function EmailConfirmation(){
 
     console.log('email: ' + user_email + ', session_id: ' + session_id);
 
-    function handleVerification(event){
+    async function handleVerification(event){
         event.preventDefault();
         let ver_code = document.getElementById('verification_code').value;
         console.log('verification in process ... ver code : ' + ver_code);
@@ -34,7 +35,10 @@ function EmailConfirmation(){
             i = i + 1;
         }
         // sending the ver_obj_data
-        axios.post(apiEndPoint.concat('verify_email'), ver_obj_data).then( res => {
+        try {
+            setIsButtonDisabled(true); // disabling the button
+            let res = await axios.post(apiEndPoint.concat('verify_email'), ver_obj_data);
+            setIsButtonDisabled(false); // re-enabling the button
             console.log(res.data['verification_status']) //value = verified or not_verified
             if (res.data['verification_status'] === 'verified'){
                 let code_paragraph_error = document.getElementById('ver_code_error');
@@ -46,8 +50,11 @@ function EmailConfirmation(){
                 code_paragraph_error.innerText = 'your verification code is wrong, please try again';
 
             }
-        })
-        
+        }
+        catch (error) {
+            console.log('Errors occurred: ' + error);
+
+        }
     }
 
     return(
@@ -64,7 +71,7 @@ function EmailConfirmation(){
                         <input id="verification_code" className='email_verificaion' minLength={6} maxLength={6} type='text' required ></input>
                         </div>
                         <br /> <br />
-                        <button type='submit'>Verify</button>
+                        <button type='submit' disabled = {isButtonDisabled}>{ isButtonDisabled ? 'verification in progress ...' : 'Verify'}</button>
                     </form>
                 </section>
             </div>
