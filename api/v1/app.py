@@ -6,6 +6,7 @@ from flask import Flask, jsonify, make_response, abort, request
 from api.v1.views import app_views
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
+from os import getenv
 
 app = Flask(__name__)    
 app.url_map.strict_slashes = False 
@@ -30,6 +31,5 @@ if __name__ == "__main__":
     @app.errorhandler(404)
     def not_found(e):
         return {"error":"Not Found"}, 404
-    
-    
+        
     app.run("127.0.0.1", "5000", threaded=True)
