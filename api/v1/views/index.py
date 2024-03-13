@@ -7,6 +7,8 @@ from models.data_checker import data_check
 from models.email_handler import handle_email
 from models.login_handler import login_creds_check
 from models.storage_engine.DB_handler import *
+from models.reset_password_handler import *
+import requests
 
 
 @app_views.route("/status", methods=['GET'],
@@ -94,6 +96,9 @@ def email_verify():
             # this will help improve the app performence
 
             """ removing the instance will be done in here. """
+            instance_session_id = data['session_id']
+            # we call the delete function form DB_handler
+            delete_ver_obj(instance_session_id)
 
         else:
             """ verification status is failed """
@@ -123,3 +128,50 @@ def login():
 
     print("status_obj is : {}".format(login_creds_check_obj)) # login_creds_check_obj will have two keys (login_creds_check, logn_token), values will be set by login_creds_check(data).
     return make_response(jsonify(login_creds_check_obj), 200)
+
+@app_views.route('/check_if_email_exist', methods=['POST'],
+                 strict_slashes=False)
+def check_if_email_exist():
+    """ this checks if the provided email (for password reset) does exist in the Database"""
+    if not request.is_json:
+        abort(404, 'Not a JSON')
+    data = request.get_json()
+    checked_email = data['provided_email']
+    
+    status  = check_email_in_db(checked_email)
+
+    email_availability_status = {}
+    
+    if status:
+        print('the provided email does exist in the DataBase.')
+        email_availability_status['availability'] = 'True'
+        reset_email_obj = compose_reset_email(checked_email)
+        # in here we gonna send the email object returned from the compose reset_email
+        reset_email_json = json.dumps(reset_email_obj)
+        res = requests.post('http://0.0.0.0:5000/api/v1/send_ver_code', json = reset_email_json).content
+
+        res_data = json.loads(res.decode('utf-8'))
+        if res_data['status'] == "500":
+                print('Errors encountred while sending the email.')
+        else:
+                print('The email was sent successfully')
+
+        return make_response(jsonify(email_availability_status), 200)
+    else:
+        email_availability_status['availability'] = 'False'
+        print('the provided email doesnt exist on the DataBase.')     
+        return make_response(jsonify(email_availability_status), 200)
+
+@app_views.route('/reset_password', methods=['POST'], strict_slashes=False)
+
+def reser_password_endpoint():
+    """ this is the password-reset api endpoint """
+    if not request.is_json:
+        abort(406, 'Not a JSON')
+    data = request.get_json()
+    print('we got: {}'.format(data))
+    if data['new_password'] != data['new_password_conf']:
+        print('passwords dont match')
+        return make_response(jsonify({'password_check':'Failed', 'password_changed': 'null', 'token_status': 'null'}), 200)
+    changed_status = update_password(data)
+    return make_response(jsonify({'password_check':'Passed', 'password_changed': changed_status['password_changed'], 'token_status': changed_status['token_status']}), 200)
