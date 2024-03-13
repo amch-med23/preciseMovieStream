@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from 'axios';
+import { useState } from "react";
 
 import '../styling/index_styling.css';
 
@@ -13,8 +14,9 @@ function Login()
     const navigate = useNavigate();
     const location = useLocation();
     const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const  [isButtonDisabled, setIsButonDisabled] = useState(false);
 
-    function handlelogIn(event){
+    async function handlelogIn(event){
         event.preventDefault();
         let user_email = document.getElementById('user_email').value;
         let user_password = document.getElementById('user_password').value;
@@ -30,7 +32,10 @@ function Login()
             i = i + 1;
         }
         console.log('login object elems are: user_email: '+ login_obj['user_email'], 'user_password: ' + login_obj['user_password']);
-        axios.post(apiEndPoint.concat('login'), login_obj).then(res => {
+        try {
+            setIsButonDisabled(true); // disablng the button
+            let res = await axios.post(apiEndPoint.concat('login'), login_obj);
+            setIsButonDisabled(false) // re-enable the button
             console.log(res.data['login_creds_check']);
             if (res.data['login_creds_check'] === "passed"){
                 //extract the user_name from the data package and passe it to /Home.
@@ -55,22 +60,25 @@ function Login()
                 } else{
                     alert('there was errors while setting the login_token variable');
                 }
-                //verify the login_token value then navigate to the '/home' route.
+               
                  
             }
             else if (res.data['login_creds_check'] === 'failed'){
                 let login_error_paragraph = document.getElementById('login_error');
                 login_error_paragraph.innerText = "the email or the password you supplied is wrong.";
             }
-        });
-        // just a note, but we can use locastorage to save the login_status, when the user in loged in.
+
+        } catch (error) {
+            console.log('Error occured while logging in: ' + error);
+        }
+        // just a note, but we can use locastorage to save the login_status, when the user is loged in.
         // let name_value = localStorage.getItem('name'), or .setItem('key', 'value'), or .removeItem('key')
     }
     return(
         <>
         <NavBar />
         <div className="container">
-                <section>
+                <section className="login_main_section">
                     <br />
                     <h>This is the Login page, use your credentials to login</h> 
                     <br /> <br />
@@ -85,7 +93,8 @@ function Login()
                             <input type="password" required minLength={8} id="user_password"></input>
                             <br></br>
                         </div>
-                        <button type="submit">log in</button>
+                        <button type="submit" disabled={isButtonDisabled}>{ isButtonDisabled ? 'checking...' : 'log in'}</button>
+                        <div className="reset_password"><Link to="/password_reset">Forget your password?</Link></div>
                     </form>
                 </section>
         </div>

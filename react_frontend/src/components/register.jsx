@@ -87,9 +87,9 @@ function Register()
         <>
             <NavBar />
             <div className="container">
-                <section>
+                <section className="register_main_section">
                     <div className="register_form">
-                            <h >This is the Register page.</h> 
+                            <h >This is the Register page, register new account</h> 
                             <br /> <br />
                             <div id="form_pass_error_msg" className="form_error_class"></div> 
                             <div id="form_email_error_msg" className="form_error_class"></div>
