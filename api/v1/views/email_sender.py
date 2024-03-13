@@ -22,11 +22,12 @@ def send_ver_code():
                         mail = Mail(app)
                         res = request.get_json()
                         data = json.loads(res)
-                        ver_code = data['ver_code']
+                        
                         user_email = data['user_email']
                         email_content = data['email_html']
+                        email_subject= data['email_subject']
                         print('email content is: {}'.format(email_content))
-                        msg = Message(subject='Your preciseMovieStream email verification code.', sender='no-replay@losag.tech', recipients=[user_email])
+                        msg = Message(subject=email_subject, sender='no-replay@losag.tech', recipients=[user_email])
                         msg.html = email_content
                         mail.send(msg)
                         status_code = 200
