@@ -1,0 +1,8 @@
+The data base used with this app is a mysql database and here are the URI configs:
+
+-> user name: pms_user
+-> database name: pms_dev
+-> user password: pms_Passw0rd
+
+- this user must have (read, write, update) permissions on this databse.
+
