@@ -535,7 +535,7 @@ h4 {
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 50px;
 }
 .guest_proceed_div {
   display: flex;
@@ -592,4 +592,7 @@ h4 {
 }
 .error_img_holder {
   width: 900px;
+}
+.password_reset_page_first {
+  margin: 50px;
 }

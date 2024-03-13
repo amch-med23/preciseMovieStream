@@ -56,7 +56,7 @@ function ResetPassword()
         <>
         <NavBar />
             <div className="container">
-                <section>
+                <section className="password_reset_page_first">
                     This is the password reset page, enter your email address to reset your password.
                     <br />
                     <br />
