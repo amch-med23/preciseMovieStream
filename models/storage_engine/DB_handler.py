@@ -31,6 +31,12 @@ with app.app_context():
         questionnaire = db.Column('questionnaire', db.String(255))
         linked_email = db.Column('linked_email', db.String(255))
 
+    class reset_object_table(db.Model):
+        __tablename__ = 'reset_tokens'
+        id = db.Column('id', db.Integer, primary_key=True)
+        email_address = db.Column('email_address', db.String(255))
+        reset_token = db.Column('reset_token', db.String(255))
+        creted_time = db.Column('request_date', db.DateTime)
         # creating all the tables if they are not already created.
         
     db.create_all()
@@ -73,6 +79,57 @@ with app.app_context():
                 instance_dict = {column.name: getattr(instance, column.name) for column in instance.__table__.columns}
                 ver_code_obj.append(instance_dict)
             #print('this is what we have returned from the ver_code_table in DB {}'.format(ver_code_obj))
-            return ver_code_obj 
+            return ver_code_obj
+    # This was done to limit the data the ver_code_obj table holds (after a successful register attempt)
+    def delete_ver_obj(instance_session_id):
+        """ this delets the ver_object nstance from the table based on its session_id """
+        with app.app_context():
+            row = ver_code_table.query.filter_by(session_id=instance_session_id).first()
+            if row:
+                db.session.delete(row)
+                db.session.commit()
+                print('we have successfully deleted this verification object {}'.format(row))
+                return True
+            print('failed to remove the specified verification object')
+            return False
+        
+    def update_password_db(user_instance):
+        """ this will update the password for a given gmail account """
+        with app.app_context():
+            instance_email = user_instance['email_address']
+            new_password = user_instance['new_password']
+            # getting the specified row.
+            row = users_table.query.filter_by(user_email=instance_email).first()
+            if row:
+                setattr(row, 'password', new_password)
+                db.session.commit()
+                print('password updated successfully for {}'.format(row))
+                return True # for testing, returning this as false
+            print('password update failed.')
+            return False
 
+    def check_email_in_db(email):
+        """ this checks if the email is in the registered users table.
+        True: if the email is there.
+        False: if the email is not there."""
+        with app.app_context():
+            row = users_table.query.filter_by(user_email=email).first()
+            if row:
+                return True
+            return False
+    
+    def store_reset_token(reset_token_obj):
+        """ this wil store the reset token object in the specified table """
+        with app.app_context():
+            new_row = reset_object_table(**reset_token_obj)
+            db.session.add(new_row)
+            db.session.commit()
+            print('we have saved the reset object in the database successfully')
 
+    def get_reset_tokens():
+        """ this returns a list of reset tokens from the Database (used to define the validity o the link)"""
+        with app.app_context():
+            reset_token_obj = []
+            values = reset_object_table.query.with_entities(getattr(reset_object_table, 'reset_token')).all()
+            column_values = [value[0] for value in values]
+            return column_values
