@@ -79,11 +79,11 @@ function PasswordResetProceed() {
                 <form onSubmit={HandlePasswordReset}>
                     <div>
                     <h >Enter your new password:</h><br />
-                    <input id="new_pass"  type="password" required minLength={8}></input>
+                    <input id="new_pass" placeholder="enter your new password" type="password" required minLength={8}></input>
                     <br />
                     <br />
                     <h>Re enter your new password:</h> <br />
-                    <input type="password" minLength={8} required  id="new_pass_conf"></input>
+                    <input type="password" placeholder="re-enter your password" minLength={8} required  id="new_pass_conf"></input>
                     </div>
                     <br />
                     <div>

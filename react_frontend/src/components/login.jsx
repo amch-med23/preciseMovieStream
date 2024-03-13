@@ -86,11 +86,11 @@ function Login()
                     <form onSubmit={handlelogIn}>           
                         <div className="input_box">
                             <h>Enter your email:</h><br />
-                            <input type="email" required id='user_email'></input>
+                            <input type="email" placeholder="enter your email" required id='user_email'></input>
                         </div>
                         <div className="input_box">
                             <h>Enter your password:</h><br />
-                            <input type="password" required minLength={8} id="user_password"></input>
+                            <input type="password" placeholder="enter your password" required minLength={8} id="user_password"></input>
                             <br></br>
                         </div>
                         <button type="submit" disabled={isButtonDisabled}>{ isButtonDisabled ? 'checking...' : 'log in'}</button>

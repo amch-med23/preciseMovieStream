@@ -66,7 +66,7 @@ function ResetPassword()
                     
                     <form onSubmit={CheckEmailAvailability}>
                         <h4>Email address:</h4>
-                        <input id="email_address" type="email" required></input>
+                        <input id="email_address" placeholder="provide your email" type="email" required></input>
                         <br /><br />
                         <button type="submit" disabled={isButtonDisabled}>{ isButtonDisabled ? 'Checking your email...' : 'submit'}</button>
                     </form>

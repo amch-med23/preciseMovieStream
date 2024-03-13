@@ -6,7 +6,7 @@ function SystemStatus() {
     
     console.log("system status invoked");
     
-        const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+        const apiEndPoint = "http://localhost:5000/api/v1/";
         axios.get(apiEndPoint.concat("status")).then( res => {
             {/* this is where am reating a use state*/}
             let status = res.data['status_code'];

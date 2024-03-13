@@ -581,3 +581,15 @@ h4 {
   align-items: center;
   margin: 50px;
 }
+.page_not_found {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+.error_img_holder {
+  width: 900px;
+}
