@@ -12,7 +12,7 @@ function PasswordResetProceed() {
     const location = useLocation();
     const navigate = useNavigate();
     const searchParams = new URLSearchParams(location.search);
-    const apiEndPont = 'http://wsl.localhost:5000/api/v1/';
+    const apiEndPont = 'http://localhost:5000/api/v1/';
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     let email_address = searchParams.get('user_email');

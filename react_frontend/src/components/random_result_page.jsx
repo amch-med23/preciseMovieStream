@@ -9,7 +9,7 @@ import HomeNavBar from "./home_navbar";
 function RandomResultHolder(){
     // get the button object
     const [isButtonDisabled, setIsButtonDisabled] = useState(false) ;
-    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const apiEndPoint = "http://localhost:5000/api/v1/";
 
     async function getRandomresults() {
 

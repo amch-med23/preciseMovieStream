@@ -8,7 +8,7 @@ import { render } from "react-dom";
 
 function MediaInfos(){
 
-    let apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    let apiEndPoint = "http://localhost:5000/api/v1/";
 
     async function handleSubmit(event){
         

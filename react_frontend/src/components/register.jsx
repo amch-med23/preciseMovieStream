@@ -12,7 +12,7 @@ import Footer from './footer.jsx';
 function Register()
 {
     const navigate = useNavigate();
-    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const apiEndPoint = "http://localhost:5000/api/v1/";
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
    async function handleSubmit(event){

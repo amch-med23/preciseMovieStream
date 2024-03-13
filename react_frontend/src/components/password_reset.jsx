@@ -12,7 +12,7 @@ import '../styling/index_styling.css';
 function ResetPassword()
 {
     const navigate = useNavigate();
-    let apiEndPoint = 'http://wsl.localhost:5000/api/v1/';
+    let apiEndPoint = 'http://localhost:5000/api/v1/';
     const [isButtonDisabled, setIsButonDisabled] = useState(false);
 
     async function CheckEmailAvailability(event){

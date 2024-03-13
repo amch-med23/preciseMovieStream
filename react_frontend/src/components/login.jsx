@@ -13,7 +13,7 @@ function Login()
 {
     const navigate = useNavigate();
     const location = useLocation();
-    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const apiEndPoint = "http://localhost:5000/api/v1/";
     const  [isButtonDisabled, setIsButonDisabled] = useState(false);
 
     async function handlelogIn(event){

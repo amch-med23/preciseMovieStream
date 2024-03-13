@@ -11,7 +11,7 @@ function EmailConfirmation(){
 
     const navigate = useNavigate();
     const location = useLocation();
-    const apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    const apiEndPoint = "http://localhost:5000/api/v1/";
     const [ isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     let user_email = location.state.email;

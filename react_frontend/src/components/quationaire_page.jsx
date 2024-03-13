@@ -13,7 +13,7 @@ function QuationairePageHolder(){
     let user_name = location.state.user_name;
     let user_email = location.state.user_email;
     
-    let apiEndPoint = "http://wsl.localhost:5000/api/v1/";
+    let apiEndPoint = "http://localhost:5000/api/v1/";
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 
