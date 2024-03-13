@@ -25,7 +25,8 @@ def handle_email(session_id, user_email):
         ver_code_obj = {}
         ver_code_obj['ver_code'] = str(ver_code)
         ver_code_obj['user_email'] = str(user_email)
-        ver_code_obj['email_html'] = '<html><head><div style="color: black; margin: 10px; font-size: small;">Precise Movie Stream, a movie recommendation system.</div></head><body><div style="margin: 15px; color: black"><h> Welcom <h style="color: blue"> '+ user_email +' </h> , we have noticed that you tried to register an account with us. This is your email verification code : <h style="color: blue;">'+ str(ver_code) +'</h> </h></div></body><footer><div style="font-size: small">Developed by <h style="blue: red; font-size: small;">Amouch mohamed</h></div></footer></html>'
+        ver_code_obj['email_subject'] = 'Presice Movie Stream email verification code.'
+        ver_code_obj['email_html'] = '<html><head><div style="color: black; font-size: small;">Precise Movie Stream, a movie recommendation system.</div></head><body><div style="margin: 15px; color: black"><h> Welcom <h style="color: #f34a4a"> '+ user_email +' </h> , we have noticed that you tried to register an account with us. This is your email verification code : <h style="color:  #f34a4a;">'+ str(ver_code) +'</h> </h></div></body><footer><h style="font-size: small; color: black">If you did not request this, you can safely ignore this email.</h></footer></html>'
         
         ver_code_json = json.dumps(ver_code_obj)
         print(ver_code_json)
