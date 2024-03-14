@@ -38,7 +38,7 @@ function GuestRandomMoviesPage(){
                 
             }
             else{
-                console.log('data returned empty, propeply we hit our API calls limit for the day.');
+                console.log('data returned empty, probably we hit our API calls limit for the day.');
                 const element_holder = document.getElementById('div_random_movies_holder');
                 element_holder.innerHTML = `<h>Data returned empty, propeply we hit our API calls limit for the day.</h>`; // this cleares the previous data as well.
                 

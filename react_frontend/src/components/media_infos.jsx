@@ -62,7 +62,7 @@ function MediaInfos(){
                                 div.innerHTML = `<div class="res_data_text">Ratings :</div>`;
                                 contentDiv.appendChild(div);
                                 if (Object.keys(value).length == 0){
-                                    console.log('value is null');
+                                    //console.log('value is null');
                                     let div = document.createElement('div');
                                         div.innerHTML = `<div class="res_data_text"><h class="rating_key_h">N/A</h></div>`;
                                         contentDiv.appendChild(div);

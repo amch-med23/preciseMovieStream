@@ -19,7 +19,7 @@ function ResetPassword()
         event.preventDefault();
 
         let email_address = document.getElementById('email_address').value;
-        console.log(email_address);
+        //console.log(email_address);
         
         let email_obj = {};
         email_obj['provided_email'] = email_address;
@@ -33,15 +33,15 @@ function ResetPassword()
             setIsButonDisabled(false); //re-enabling the button
             let Result = res.data;
             if (Result['availability'] === 'True'){
-                console.log('Email found');
-                notice_paragragh.innerHTML = `<h style="color: #16b916; margin: 10px;">We have sent a reset link to this email, please click on it and follow the instructions to change your password.</h>`;
+                //console.log('Email found');
+                notice_paragragh.innerHTML = `<h style="color: #16b916; margin: 10px;">We have sent a reset link to this email, please click on it and follow the instructions to change your password. <h style="font-size: small">the email can take up to 5 minutes to arrive in your inbox</h></h>`;
                 // 10seconsd timeout befour redirecting to login.
                 setTimeout(function() {
                     navigate('/login');
                 }, 10000);
             }
             else {
-                console.log('The email you provided is not in our system (This means you are not registered). please go ahead and register a new account');
+                //console.log('The email you provided is not in our system (This means you are not registered). please go ahead and register a new account');
                 
                 notice_paragragh.innerHTML = `<h style="color: red; margin: 10px">The email you provided is not in our systems (this means you are not registered). Please go ahead and register a new account</h>`;
             }
@@ -63,7 +63,7 @@ function ResetPassword()
                     <div className="password_reset_notice" id="password_reset_notice">
                         
                     </div>
-                    
+                                        
                     <form onSubmit={CheckEmailAvailability}>
                         <h4>Email address:</h4>
                         <input id="email_address" placeholder="provide your email" type="email" required></input>

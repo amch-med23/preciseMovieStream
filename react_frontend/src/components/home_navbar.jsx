@@ -13,7 +13,7 @@ function HomeNavBar() {
     function handleClick(){        
         localStorage.removeItem('pms_user_name');
         localStorage.removeItem('pms_login_token');
-        console.log('you are logging out..., the locall storage data wil be destroyed ...');
+        //console.log('you are logging out..., the locall storage data wil be destroyed ...');
         navigate('/');
     }
     

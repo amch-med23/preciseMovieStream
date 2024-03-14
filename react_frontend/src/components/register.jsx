@@ -32,7 +32,7 @@ function Register()
             i = i + 1;
         };
        
-        console.log(user_data); // testing the user data.
+        //console.log(user_data); // testing the user data.
         // sending the user data to the back end.
 
         try {
@@ -41,11 +41,11 @@ function Register()
             let res = await axios.post(apiEndPoint.concat('register'), user_data);
             setIsButtonDisabled(false) // re-enabling the button after the post request success
 
-            console.log("the back_end status of email is: " + res.data['email_check']);
-            console.log("the back_end status of password is : " + res.data['password_check']);
+            //console.log("the back_end status of email is: " + res.data['email_check']);
+            //console.log("the back_end status of password is : " + res.data['password_check']);
             // the returned result check.
             if (res.data['password_check'] === 'failed'){
-                console.log("password doesn't match, try again.");
+                //console.log("password doesn't match, try again.");
                 let password_error_value = "password combination doesn't match, try again.";
                 const pass_error_paragraph = document.getElementById('form_pass_error_msg');
                 pass_error_paragraph.innerText = password_error_value;
@@ -57,7 +57,7 @@ function Register()
                 pass_error_paragraph.innerText = '';
             }
             if (res.data['email_check'] === 'failed'){
-                console.log("email was already used");
+                //console.log("email was already used");
                 let email_error_value = "the email provided is already used, try a differant email, or reset you password, and use it to login.";
                 const email_error_paragraph = document.getElementById('form_email_error_msg');
                 email_error_paragraph.innerText = email_error_value;

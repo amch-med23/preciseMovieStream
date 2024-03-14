@@ -31,12 +31,12 @@ function Login()
             login_obj[available_attr[i]] = form_values[i];
             i = i + 1;
         }
-        console.log('login object elems are: user_email: '+ login_obj['user_email'], 'user_password: ' + login_obj['user_password']);
+        //console.log('login object elems are: user_email: '+ login_obj['user_email'], 'user_password: ' + login_obj['user_password']);
         try {
             setIsButonDisabled(true); // disablng the button
             let res = await axios.post(apiEndPoint.concat('login'), login_obj);
             setIsButonDisabled(false) // re-enable the button
-            console.log(res.data['login_creds_check']);
+            //console.log(res.data['login_creds_check']);
             if (res.data['login_creds_check'] === "passed"){
                 //extract the user_name from the data package and passe it to /Home.
                 // removing the error text if there is any
@@ -47,8 +47,8 @@ function Login()
                 let user_name = res.data['user_name'];
                 let user_email = res.data['user_email']
 
-                console.log('passed');
-                console.log('your login token is : ' + login_token);
+                //console.log('passed');
+                //console.log('your login token is : ' + login_token);
                 // first we set the login_token, then we verify it, then we van navigate to '/home'
                 //set login_token in the localStorage objet. (this will define the home navbar (login/logout buttons) [this token should be destroyed when logedout]).
                 localStorage.setItem('pms_login_token', login_token);

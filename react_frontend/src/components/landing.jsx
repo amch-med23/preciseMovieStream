@@ -27,8 +27,8 @@ function Landing()
                             <div className="hero_first">   
                                 <div>
                                     <h1> Precise Movie Stream</h1>
-                                    <h4> The tool that helps you detirmin the next greate movie to watch.</h4>
-                                    <h4> This tool works as a recommendation system or (content promotion) based on your answer to a specific quationaire.</h4>
+                                    <h4> The tool that helps you determine the next great movie to watch.</h4>
+                                    <h4> This tool works as a recommendation system or (content promotion) based on your answer to a specific questionnaire.</h4>
 
                                 </div>
                                <div>
@@ -46,8 +46,8 @@ function Landing()
                         <section className="second_section">
                             <div className="sec_section_hero_1">
                                     <h2>Find that movie or that serie you always wanted.</h2>
-                                    <h4>Have you ever though of a movie or you have seen it befoure but forget it?</h4>
-                                    <h4>Hou can provide that movie keywords (words that are with in the movie context), and our system will try to give you the best guess.</h4>
+                                    <h4>Have you ever tought of a movie or you have seen it befoure but forget it's title or release date?</h4>
+                                    <h4>You just have to provide that movie keywords (words that are within the movie context), and our system will try to provide you with the best guess.</h4>
                             </div>
                             <div className="sec_section_hero_2">
                                 <img className="movie_finder_img" src={movie_finder}></img>

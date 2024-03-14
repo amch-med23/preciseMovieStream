@@ -16,8 +16,8 @@ function Home()
     const user_email = location.state.user_email;
     // make sure when logout to destroy the 'pms_user_name' and 'pms_login_token'.
 
-    console.log('you have loged in as: ' + user_name);
-    console.log('your loged in email is: ' + user_email);
+    //console.log('you have loged in as: ' + user_name);
+    //console.log('your loged in email is: ' + user_email);
 
     //let name_paragrarph = document.getElementById('intr_user_name');
     //name_paragrarph.innerHTML = '<div style="color: red;">user_name</div>';
@@ -52,7 +52,7 @@ function Home()
                 </section>
                 <section className="home_main_selection_section">
                     <div className="random_movie_div">
-                        <button onClick={ random_result_submit }>See random mvoies from random categories</button>
+                        <button onClick={ random_result_submit }>See random movies from random categories</button>
                         <p> By clicking this you will see the result of a random movies or series list that you can watch. <h style={{color :"red"}}>remember this has no link to your interrests. The results are random</h></p>
                     </div>
                     <div className="home_quationaire_movie_div">

@@ -32,12 +32,12 @@ function QuationairePageHolder(){
 
         if (media_keywords.includes(', ') || liked_media.includes(', ')){
             //console.log('space after comma detected, please use only commas.');
-            comma_warning_paragraph.innerHTML = `<h class="comma_warning_text">space after comma detected, please only use commas with no space aroud them.</h>`;
+            comma_warning_paragraph.innerHTML = `<h class="comma_warning_text">space after comma detected, please only use commas with no spaces aroud them.</h>`;
 
         }
         else if (media_keywords.includes(' ,') || liked_media.includes(' ,')){
             //console.log('space before comma detected, please use only commas.');
-            comma_warning_paragraph.innerHTML = `<h class="comma_warning_text">space before comma detected, please only use commas with no space aroud them.</h>`;
+            comma_warning_paragraph.innerHTML = `<h class="comma_warning_text">space before comma detected, please only use commas with no spaces aroud them.</h>`;
 
         }
 
@@ -74,7 +74,7 @@ function QuationairePageHolder(){
             let attrbs_values = [release_year, media_type, final_keywords_list, final_liked_movies_list, user_name, user_email];
 
             let k = 0;
-            console.log(available_attrbs.length);
+            //console.log(available_attrbs.length);
             while (k < available_attrbs.length){
                 data_obj[available_attrbs[k]] = attrbs_values[k];
                 k = k + 1;
@@ -97,7 +97,7 @@ function QuationairePageHolder(){
 
                 if (Data['liked_movies_status'] === 'False' && Data['keywords_status'] === 'False'){
                     // Show that no Hit was found for the user search
-                    console.log('Show that no Hit was found for the user search');
+                    //console.log('Show that no Hit was found for the user search');
                     let div = document.createElement('div');
                     div.innerHTML = `<div class="quationaire_result_elem_div">No results were found for your search.</div>`;
                     result_holder_div.innerHTML = ``;
@@ -108,7 +108,7 @@ function QuationairePageHolder(){
                     result_holder_div.innerHTML = ``; // clear the error message befoure displaying the result, this cleans the holder each time the request was made
                     if (Data['keywords_status'] === 'True'){
                         //append the keywords status to the content to the holder
-                        console.log('append the content of keywords data to the holder');
+                        //console.log('append the content of keywords data to the holder');
                         
                         let i = 0;
                         
@@ -125,12 +125,12 @@ function QuationairePageHolder(){
                         }
                     }
                     else { // keywords are False
-                        console.log('no keywords result will be appended');
+                        //console.log('no keywords result will be appended');
                         //don't iretate through the content of key_words since it will be null
                     }
                     if(Data['liked_movies_status'] === 'True') {
                         // append the content of liked_movies_status to the holder result.
-                        console.log('append the content of liked_movies data to the holder');
+                        //console.log('append the content of liked_movies data to the holder');
 
                         let i = 0;
                         
@@ -148,7 +148,7 @@ function QuationairePageHolder(){
                     }
                     else { //liked movies False
                         // don't append the result to the holder div.
-                        console.log('no movies resutls will be appended');
+                        //console.log('no movies resutls will be appended');
                         
                     }
             }
@@ -201,7 +201,7 @@ function QuationairePageHolder(){
                                 <h className="random_movie_title_green"> (required)</h>
                             </div>
                             <div className="quation_holder">
-                                <h className="quation_text">Provide the names of some movies you watched and liked before (separated by comma and no space around the comma) : </h>
+                                <h className="quation_text">Provide the titles of some movies you watched and liked before (separated by comma and no space around the comma) : </h>
                                 <input id="liked_movies_names"  className="quationaire_input_fields"></input> <h className="random_movie_title"> (optional)</h>
                             </div>
                             

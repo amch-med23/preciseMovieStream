@@ -19,12 +19,12 @@ function EmailConfirmation(){
     let user_name = location.state.user_name;
     let user_password = location.state.password;
 
-    console.log('email: ' + user_email + ', session_id: ' + session_id);
+    //console.log('email: ' + user_email + ', session_id: ' + session_id);
 
     async function handleVerification(event){
         event.preventDefault();
         let ver_code = document.getElementById('verification_code').value;
-        console.log('verification in process ... ver code : ' + ver_code);
+        //console.log('verification in process ... ver code : ' + ver_code);
         let ver_obj_data = {}
         let available_attr = ['email', 'session_id', 'ver_code', 'user_name', 'password']
         let ver_data = [user_email, session_id, ver_code, user_name, user_password]
@@ -39,7 +39,7 @@ function EmailConfirmation(){
             setIsButtonDisabled(true); // disabling the button
             let res = await axios.post(apiEndPoint.concat('verify_email'), ver_obj_data);
             setIsButtonDisabled(false); // re-enabling the button
-            console.log(res.data['verification_status']) //value = verified or not_verified
+            //console.log(res.data['verification_status']) //value = verified or not_verified
             if (res.data['verification_status'] === 'verified'){
                 let code_paragraph_error = document.getElementById('ver_code_error');
                 code_paragraph_error.innerText = '';
