@@ -1,0 +1,383 @@
+[2024-03-14 12:16:52 +0000] [37613] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 12:16:52 +0000] [37613] [INFO] Listening at: http://0.0.0.0:5000 (37613)
+[2024-03-14 12:16:52 +0000] [37613] [INFO] Using worker: sync
+[2024-03-14 12:16:52 +0000] [37614] [INFO] Booting worker with pid: 37614
+[2024-03-14 12:22:44 +0000] [37613] [CRITICAL] WORKER TIMEOUT (pid:37614)
+[2024-03-14 12:22:44 +0000] [37614] [INFO] Worker exiting (pid: 37614)
+[2024-03-14 12:22:44 +0000] [37613] [ERROR] Worker (pid:37614) exited with code 1
+[2024-03-14 12:22:44 +0000] [37613] [ERROR] Worker (pid:37614) exited with code 1.
+[2024-03-14 12:22:44 +0000] [38972] [INFO] Booting worker with pid: 38972
+[2024-03-14 12:23:19 +0000] [37613] [CRITICAL] WORKER TIMEOUT (pid:38972)
+[2024-03-14 12:23:19 +0000] [38972] [INFO] Worker exiting (pid: 38972)
+[2024-03-14 12:23:19 +0000] [37613] [ERROR] Worker (pid:38972) exited with code 1
+[2024-03-14 12:23:19 +0000] [37613] [ERROR] Worker (pid:38972) exited with code 1.
+[2024-03-14 12:23:19 +0000] [39111] [INFO] Booting worker with pid: 39111
+[2024-03-14 12:23:38 +0000] [37613] [INFO] Handling signal: int
+[2024-03-14 12:23:38 +0000] [39111] [INFO] Worker exiting (pid: 39111)
+[2024-03-14 12:23:38 +0000] [37613] [INFO] Shutting down: Master
+[2024-03-14 12:24:49 +0000] [39617] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 12:24:49 +0000] [39617] [INFO] Listening at: http://0.0.0.0:5000 (39617)
+[2024-03-14 12:24:49 +0000] [39617] [INFO] Using worker: sync
+[2024-03-14 12:24:49 +0000] [39619] [INFO] Booting worker with pid: 39619
+[2024-03-14 12:25:44 +0000] [39617] [CRITICAL] WORKER TIMEOUT (pid:39619)
+[2024-03-14 12:25:44 +0000] [39619] [INFO] Worker exiting (pid: 39619)
+[2024-03-14 12:25:45 +0000] [39617] [ERROR] Worker (pid:39619) exited with code 1
+[2024-03-14 12:25:45 +0000] [39617] [ERROR] Worker (pid:39619) exited with code 1.
+[2024-03-14 12:25:45 +0000] [39840] [INFO] Booting worker with pid: 39840
+[2024-03-14 12:29:30 +0000] [39617] [INFO] Handling signal: int
+[2024-03-14 12:29:30 +0000] [39840] [INFO] Worker exiting (pid: 39840)
+[2024-03-14 12:29:30 +0000] [39617] [INFO] Shutting down: Master
+[2024-03-14 12:39:37 +0000] [43320] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 12:39:37 +0000] [43320] [INFO] Listening at: http://0.0.0.0:5000 (43320)
+[2024-03-14 12:39:37 +0000] [43320] [INFO] Using worker: sync
+[2024-03-14 12:39:37 +0000] [43321] [INFO] Booting worker with pid: 43321
+[2024-03-14 12:40:44 +0000] [43320] [CRITICAL] WORKER TIMEOUT (pid:43321)
+[2024-03-14 12:40:44 +0000] [43321] [INFO] Worker exiting (pid: 43321)
+[2024-03-14 12:40:44 +0000] [43320] [ERROR] Worker (pid:43321) exited with code 1
+[2024-03-14 12:40:44 +0000] [43320] [ERROR] Worker (pid:43321) exited with code 1.
+[2024-03-14 12:40:44 +0000] [43592] [INFO] Booting worker with pid: 43592
+[2024-03-14 12:46:10 +0000] [43320] [INFO] Handling signal: int
+[2024-03-14 12:46:10 +0000] [43592] [INFO] Worker exiting (pid: 43592)
+[2024-03-14 12:46:10 +0000] [43320] [INFO] Shutting down: Master
+[2024-03-14 12:51:40 +0000] [46293] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 12:51:40 +0000] [46293] [INFO] Listening at: http://0.0.0.0:5000 (46293)
+[2024-03-14 12:51:40 +0000] [46293] [INFO] Using worker: sync
+[2024-03-14 12:51:40 +0000] [46295] [INFO] Booting worker with pid: 46295
+[2024-03-14 12:52:31 +0000] [46293] [CRITICAL] WORKER TIMEOUT (pid:46295)
+[2024-03-14 12:52:31 +0000] [46295] [INFO] Worker exiting (pid: 46295)
+[2024-03-14 12:52:32 +0000] [46293] [ERROR] Worker (pid:46295) exited with code 1
+[2024-03-14 12:52:32 +0000] [46293] [ERROR] Worker (pid:46295) exited with code 1.
+[2024-03-14 12:52:32 +0000] [46499] [INFO] Booting worker with pid: 46499
+[2024-03-14 12:55:03 +0000] [46293] [INFO] Handling signal: int
+[2024-03-14 12:55:03 +0000] [46499] [INFO] Worker exiting (pid: 46499)
+[2024-03-14 12:55:03 +0000] [46293] [INFO] Shutting down: Master
+[2024-03-14 12:55:05 +0000] [47200] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 12:55:05 +0000] [47200] [INFO] Listening at: http://0.0.0.0:5000 (47200)
+[2024-03-14 12:55:05 +0000] [47200] [INFO] Using worker: sync
+[2024-03-14 12:55:05 +0000] [47202] [INFO] Booting worker with pid: 47202
+[2024-03-14 12:55:27,834] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 12:56:59 +0000] [47200] [CRITICAL] WORKER TIMEOUT (pid:47202)
+[2024-03-14 12:56:59 +0000] [47202] [INFO] Worker exiting (pid: 47202)
+[2024-03-14 12:56:59 +0000] [47200] [ERROR] Worker (pid:47202) exited with code 1
+[2024-03-14 12:56:59 +0000] [47200] [ERROR] Worker (pid:47202) exited with code 1.
+[2024-03-14 12:56:59 +0000] [47651] [INFO] Booting worker with pid: 47651
+[2024-03-14 13:02:29 +0000] [47200] [INFO] Handling signal: int
+[2024-03-14 13:02:29 +0000] [47651] [INFO] Worker exiting (pid: 47651)
+[2024-03-14 13:02:29 +0000] [47200] [INFO] Shutting down: Master
+[2024-03-14 13:06:53 +0000] [50632] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:06:53 +0000] [50632] [INFO] Listening at: http://0.0.0.0:5000 (50632)
+[2024-03-14 13:06:53 +0000] [50632] [INFO] Using worker: sync
+[2024-03-14 13:06:53 +0000] [50634] [INFO] Booting worker with pid: 50634
+[2024-03-14 13:07:11,116] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:07:17 +0000] [50632] [INFO] Handling signal: int
+[2024-03-14 13:07:17 +0000] [50634] [INFO] Worker exiting (pid: 50634)
+[2024-03-14 13:07:17 +0000] [50632] [INFO] Shutting down: Master
+[2024-03-14 13:07:43 +0000] [50887] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:07:43 +0000] [50887] [INFO] Listening at: http://0.0.0.0:5000 (50887)
+[2024-03-14 13:07:43 +0000] [50887] [INFO] Using worker: sync
+[2024-03-14 13:07:43 +0000] [50889] [INFO] Booting worker with pid: 50889
+[2024-03-14 13:07:59,567] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:08:14 +0000] [50887] [INFO] Handling signal: int
+[2024-03-14 13:08:14 +0000] [50889] [INFO] Worker exiting (pid: 50889)
+[2024-03-14 13:08:14 +0000] [50887] [INFO] Shutting down: Master
+[2024-03-14 13:08:15 +0000] [51074] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:08:15 +0000] [51074] [INFO] Listening at: http://0.0.0.0:5000 (51074)
+[2024-03-14 13:08:15 +0000] [51074] [INFO] Using worker: sync
+[2024-03-14 13:08:15 +0000] [51075] [INFO] Booting worker with pid: 51075
+[2024-03-14 13:09:33 +0000] [51074] [CRITICAL] WORKER TIMEOUT (pid:51075)
+[2024-03-14 13:09:33 +0000] [51075] [INFO] Worker exiting (pid: 51075)
+[2024-03-14 13:09:33 +0000] [51074] [ERROR] Worker (pid:51075) exited with code 1
+[2024-03-14 13:09:33 +0000] [51074] [ERROR] Worker (pid:51075) exited with code 1.
+[2024-03-14 13:09:33 +0000] [51392] [INFO] Booting worker with pid: 51392
+[2024-03-14 13:11:10 +0000] [51074] [CRITICAL] WORKER TIMEOUT (pid:51392)
+[2024-03-14 13:11:10 +0000] [51392] [INFO] Worker exiting (pid: 51392)
+[2024-03-14 13:11:11 +0000] [51074] [ERROR] Worker (pid:51392) exited with code 1
+[2024-03-14 13:11:11 +0000] [51074] [ERROR] Worker (pid:51392) exited with code 1.
+[2024-03-14 13:11:11 +0000] [51526] [INFO] Booting worker with pid: 51526
+[2024-03-14 13:14:06 +0000] [51074] [INFO] Handling signal: int
+[2024-03-14 13:14:06 +0000] [51526] [INFO] Worker exiting (pid: 51526)
+[2024-03-14 13:14:06 +0000] [51074] [INFO] Shutting down: Master
+[2024-03-14 13:14:09 +0000] [52337] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:14:09 +0000] [52337] [INFO] Listening at: http://0.0.0.0:5000 (52337)
+[2024-03-14 13:14:09 +0000] [52337] [INFO] Using worker: sync
+[2024-03-14 13:14:09 +0000] [52339] [INFO] Booting worker with pid: 52339
+[2024-03-14 13:14:27,327] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:14:58 +0000] [52337] [CRITICAL] WORKER TIMEOUT (pid:52339)
+[2024-03-14 13:14:58 +0000] [52339] [INFO] Worker exiting (pid: 52339)
+[2024-03-14 13:14:58 +0000] [52337] [ERROR] Worker (pid:52339) exited with code 1
+[2024-03-14 13:14:58 +0000] [52337] [ERROR] Worker (pid:52339) exited with code 1.
+[2024-03-14 13:14:58 +0000] [52538] [INFO] Booting worker with pid: 52538
+[2024-03-14 13:15:53,191] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:16:23 +0000] [52337] [CRITICAL] WORKER TIMEOUT (pid:52538)
+[2024-03-14 13:16:23 +0000] [52538] [INFO] Worker exiting (pid: 52538)
+[2024-03-14 13:16:23 +0000] [52337] [ERROR] Worker (pid:52538) exited with code 1
+[2024-03-14 13:16:23 +0000] [52337] [ERROR] Worker (pid:52538) exited with code 1.
+[2024-03-14 13:16:23 +0000] [52897] [INFO] Booting worker with pid: 52897
+[2024-03-14 13:17:45 +0000] [52337] [INFO] Handling signal: int
+[2024-03-14 13:17:45 +0000] [52897] [INFO] Worker exiting (pid: 52897)
+[2024-03-14 13:17:45 +0000] [52337] [INFO] Shutting down: Master
+[2024-03-14 13:17:46 +0000] [53272] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:17:46 +0000] [53272] [INFO] Listening at: http://0.0.0.0:5000 (53272)
+[2024-03-14 13:17:46 +0000] [53272] [INFO] Using worker: sync
+[2024-03-14 13:17:46 +0000] [53274] [INFO] Booting worker with pid: 53274
+[2024-03-14 13:19:02 +0000] [53272] [CRITICAL] WORKER TIMEOUT (pid:53274)
+[2024-03-14 13:19:02 +0000] [53274] [INFO] Worker exiting (pid: 53274)
+[2024-03-14 13:19:03 +0000] [53272] [ERROR] Worker (pid:53274) exited with code 1
+[2024-03-14 13:19:03 +0000] [53272] [ERROR] Worker (pid:53274) exited with code 1.
+[2024-03-14 13:19:03 +0000] [53584] [INFO] Booting worker with pid: 53584
+[2024-03-14 13:25:30 +0000] [53272] [INFO] Handling signal: int
+[2024-03-14 13:25:30 +0000] [53584] [INFO] Worker exiting (pid: 53584)
+[2024-03-14 13:25:30 +0000] [53272] [INFO] Shutting down: Master
+[2024-03-14 13:25:32 +0000] [55141] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:25:32 +0000] [55141] [INFO] Listening at: http://0.0.0.0:5000 (55141)
+[2024-03-14 13:25:32 +0000] [55141] [INFO] Using worker: sync
+[2024-03-14 13:25:32 +0000] [55143] [INFO] Booting worker with pid: 55143
+[2024-03-14 13:25:49,996] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:26:21 +0000] [55141] [CRITICAL] WORKER TIMEOUT (pid:55143)
+[2024-03-14 13:26:21 +0000] [55143] [INFO] Worker exiting (pid: 55143)
+[2024-03-14 13:26:21 +0000] [55141] [ERROR] Worker (pid:55143) exited with code 1
+[2024-03-14 13:26:21 +0000] [55141] [ERROR] Worker (pid:55143) exited with code 1.
+[2024-03-14 13:26:21 +0000] [55341] [INFO] Booting worker with pid: 55341
+[2024-03-14 13:26:28 +0000] [55141] [INFO] Handling signal: int
+[2024-03-14 13:26:28 +0000] [55341] [INFO] Worker exiting (pid: 55341)
+[2024-03-14 13:26:28 +0000] [55141] [INFO] Shutting down: Master
+[2024-03-14 13:26:30 +0000] [55485] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:26:30 +0000] [55485] [INFO] Listening at: http://0.0.0.0:5000 (55485)
+[2024-03-14 13:26:30 +0000] [55485] [INFO] Using worker: sync
+[2024-03-14 13:26:30 +0000] [55487] [INFO] Booting worker with pid: 55487
+[2024-03-14 13:26:55,282] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:37:03 +0000] [55485] [INFO] Handling signal: int
+[2024-03-14 13:37:03 +0000] [55487] [INFO] Worker exiting (pid: 55487)
+[2024-03-14 13:37:04 +0000] [55485] [INFO] Shutting down: Master
+[2024-03-14 13:37:05 +0000] [58007] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:37:05 +0000] [58007] [INFO] Listening at: http://0.0.0.0:5000 (58007)
+[2024-03-14 13:37:05 +0000] [58007] [INFO] Using worker: sync
+[2024-03-14 13:37:05 +0000] [58010] [INFO] Booting worker with pid: 58010
+[2024-03-14 13:37:23,299] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 13:37:56 +0000] [58007] [INFO] Handling signal: int
+[2024-03-14 13:37:56 +0000] [58010] [INFO] Worker exiting (pid: 58010)
+[2024-03-14 13:37:56 +0000] [58007] [INFO] Shutting down: Master
+[2024-03-14 13:37:57 +0000] [58272] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:37:57 +0000] [58272] [INFO] Listening at: http://0.0.0.0:5000 (58272)
+[2024-03-14 13:37:57 +0000] [58272] [INFO] Using worker: sync
+[2024-03-14 13:37:57 +0000] [58274] [INFO] Booting worker with pid: 58274
+[2024-03-14 13:39:22 +0000] [58272] [CRITICAL] WORKER TIMEOUT (pid:58274)
+[2024-03-14 13:39:22 +0000] [58274] [INFO] Worker exiting (pid: 58274)
+[2024-03-14 13:39:22 +0000] [58272] [ERROR] Worker (pid:58274) exited with code 1
+[2024-03-14 13:39:22 +0000] [58272] [ERROR] Worker (pid:58274) exited with code 1.
+[2024-03-14 13:39:22 +0000] [58615] [INFO] Booting worker with pid: 58615
+[2024-03-14 13:42:53 +0000] [58615] [INFO] Worker exiting (pid: 58615)
+[2024-03-14 13:42:53 +0000] [58272] [INFO] Handling signal: int
+[2024-03-14 13:42:53 +0000] [58272] [ERROR] Worker (pid:58615) was sent SIGQUIT!
+[2024-03-14 13:42:53 +0000] [58272] [INFO] Shutting down: Master
+[2024-03-14 13:42:59 +0000] [59545] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 13:42:59 +0000] [59545] [INFO] Listening at: http://0.0.0.0:5000 (59545)
+[2024-03-14 13:42:59 +0000] [59545] [INFO] Using worker: sync
+[2024-03-14 13:42:59 +0000] [59549] [INFO] Booting worker with pid: 59549
+[2024-03-14 13:43:54 +0000] [59545] [CRITICAL] WORKER TIMEOUT (pid:59549)
+[2024-03-14 13:43:54 +0000] [59549] [INFO] Worker exiting (pid: 59549)
+[2024-03-14 13:43:55 +0000] [59545] [ERROR] Worker (pid:59549) exited with code 1
+[2024-03-14 13:43:55 +0000] [59545] [ERROR] Worker (pid:59549) exited with code 1.
+[2024-03-14 13:43:55 +0000] [59766] [INFO] Booting worker with pid: 59766
+[2024-03-14 13:43:59 +0000] [59545] [INFO] Handling signal: int
+[2024-03-14 13:43:59 +0000] [59766] [INFO] Worker exiting (pid: 59766)
+[2024-03-14 13:43:59 +0000] [59545] [INFO] Shutting down: Master
+[2024-03-14 14:08:15 +0000] [65274] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 14:08:15 +0000] [65274] [INFO] Listening at: http://0.0.0.0:5000 (65274)
+[2024-03-14 14:08:15 +0000] [65274] [INFO] Using worker: sync
+[2024-03-14 14:08:15 +0000] [65278] [INFO] Booting worker with pid: 65278
+[2024-03-14 14:11:49 +0000] [65274] [INFO] Handling signal: int
+[2024-03-14 14:11:49 +0000] [65278] [INFO] Worker exiting (pid: 65278)
+[2024-03-14 14:11:51 +0000] [65274] [INFO] Shutting down: Master
+[2024-03-14 14:11:55 +0000] [66203] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 14:11:55 +0000] [66203] [INFO] Listening at: http://0.0.0.0:5000 (66203)
+[2024-03-14 14:11:55 +0000] [66203] [INFO] Using worker: sync
+[2024-03-14 14:11:55 +0000] [66209] [INFO] Booting worker with pid: 66209
+[2024-03-14 14:12:05,902] ERROR in app: Exception on /api/v1/register [POST]
+Traceback (most recent call last):
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 929, in ensure_sync
+    return self.async_to_sync(func)
+  File "/home/amch_user/.local/lib/python3.10/site-packages/flask/app.py", line 950, in async_to_sync
+    raise RuntimeError(
+RuntimeError: Install Flask with the 'async' extra in order to use async views.
+[2024-03-14 14:12:52 +0000] [66203] [INFO] Handling signal: int
+[2024-03-14 14:12:52 +0000] [66209] [INFO] Worker exiting (pid: 66209)
+[2024-03-14 14:12:53 +0000] [66203] [INFO] Shutting down: Master
+[2024-03-14 14:12:54 +0000] [66496] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 14:12:54 +0000] [66496] [INFO] Listening at: http://0.0.0.0:5000 (66496)
+[2024-03-14 14:12:54 +0000] [66496] [INFO] Using worker: sync
+[2024-03-14 14:12:55 +0000] [66499] [INFO] Booting worker with pid: 66499
+[2024-03-14 14:13:57 +0000] [66496] [CRITICAL] WORKER TIMEOUT (pid:66499)
+[2024-03-14 14:13:57 +0000] [66499] [INFO] Worker exiting (pid: 66499)
+[2024-03-14 14:13:58 +0000] [66496] [ERROR] Worker (pid:66499) was sent SIGKILL! Perhaps out of memory?
+[2024-03-14 14:13:58 +0000] [66739] [INFO] Booting worker with pid: 66739
+[2024-03-14 14:14:34 +0000] [66496] [CRITICAL] WORKER TIMEOUT (pid:66739)
+[2024-03-14 14:14:34 +0000] [66739] [INFO] Worker exiting (pid: 66739)
+[2024-03-14 14:14:35 +0000] [66496] [ERROR] Worker (pid:66739) was sent SIGKILL! Perhaps out of memory?
+[2024-03-14 14:14:35 +0000] [66883] [INFO] Booting worker with pid: 66883
+[2024-03-14 14:17:13 +0000] [66496] [INFO] Handling signal: int
+[2024-03-14 14:17:13 +0000] [66883] [INFO] Worker exiting (pid: 66883)
+[2024-03-14 14:17:15 +0000] [66496] [INFO] Shutting down: Master
+[2024-03-14 14:18:06 +0000] [67760] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 14:18:06 +0000] [67760] [INFO] Listening at: http://0.0.0.0:5000 (67760)
+[2024-03-14 14:18:06 +0000] [67760] [INFO] Using worker: sync
+[2024-03-14 14:18:06 +0000] [67766] [INFO] Booting worker with pid: 67766
+[2024-03-14 14:19:06 +0000] [67760] [INFO] Handling signal: int
+[2024-03-14 14:19:06 +0000] [67766] [INFO] Worker exiting (pid: 67766)
+[2024-03-14 14:19:07 +0000] [67760] [INFO] Shutting down: Master
+[2024-03-14 14:29:43 +0000] [70398] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 14:29:43 +0000] [70398] [INFO] Listening at: http://0.0.0.0:5000 (70398)
+[2024-03-14 14:29:43 +0000] [70398] [INFO] Using worker: sync
+[2024-03-14 14:29:43 +0000] [70405] [INFO] Booting worker with pid: 70405
+[2024-03-14 14:30:53 +0000] [70398] [CRITICAL] WORKER TIMEOUT (pid:70405)
+[2024-03-14 14:30:53 +0000] [70405] [INFO] Worker exiting (pid: 70405)
+[2024-03-14 14:30:54 +0000] [70398] [ERROR] Worker (pid:70405) exited with code 1
+[2024-03-14 14:30:54 +0000] [70398] [ERROR] Worker (pid:70405) exited with code 1.
+[2024-03-14 14:30:54 +0000] [70683] [INFO] Booting worker with pid: 70683
+[2024-03-14 15:08:37 +0000] [70398] [INFO] Handling signal: int
+[2024-03-14 15:08:41 +0000] [70398] [INFO] Shutting down: Master
+[2024-03-14 15:08:47 +0000] [79242] [INFO] Starting gunicorn 21.2.0
+[2024-03-14 15:08:47 +0000] [79242] [INFO] Listening at: http://0.0.0.0:5000 (79242)
+[2024-03-14 15:08:47 +0000] [79242] [INFO] Using worker: sync
+[2024-03-14 15:08:47 +0000] [79249] [INFO] Booting worker with pid: 79249
+[2024-03-14 15:08:48 +0000] [79242] [INFO] Handling signal: int
+[2024-03-14 15:08:48 +0000] [79249] [INFO] Worker exiting (pid: 79249)
+[2024-03-14 15:08:49 +0000] [79242] [INFO] Shutting down: Master
