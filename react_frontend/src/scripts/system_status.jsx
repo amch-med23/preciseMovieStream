@@ -4,14 +4,14 @@ import '../styling/footer_styling.css';
 
 function SystemStatus() {
     
-    console.log("system status invoked");
+    //console.log("system status invoked");
     
         const apiEndPoint = "http://localhost:5000/api/v1/";
         axios.get(apiEndPoint.concat("status")).then( res => {
             {/* this is where am reating a use state*/}
             let status = res.data['status_code'];
             if (status === 200) {
-                console.log('All systems are operational.');
+                //console.log('All systems are operational.');
                 //const system_ok = "all systems are operational.";
                 //this.setState({ system_status : system_ok});
 
@@ -22,7 +22,7 @@ function SystemStatus() {
             
             }
         }).catch(error => {
-            console.log("api errors are found");
+            console.log("api errors were found");
             let status_paragraph = document.getElementById('status_holder');
             status_paragraph.innerHTML = '<div className="system_status_failed" style="color: red">&nbsp;API endpoints are not responding.</div>' ;
             let dot_holder = document.getElementById('status-dot');
