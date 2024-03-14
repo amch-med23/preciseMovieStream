@@ -1,5 +1,5 @@
 ## This is the back-end production version of this flask app.
-##### since WSGI servers like gunicorn handle imports and asyncronos operations deferantelly from python, due to there spowners (the server spowns more than one worker to handle concurrent requests.)
+##### since WSGI servers like gunicorn handle imports and asyncronos operations differantelly from python, due to there spowners (the server spowns more than one worker to handle concurrent requests.)
     We have modified the back-end a littel bit to scope with that.
     
     -> Note: this modified version will throw import errors when executed with : 'python3 -m api.v1.app'
