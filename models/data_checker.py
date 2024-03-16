@@ -36,13 +36,14 @@ def data_check(data_obj):
         print("the email is not valid")
 
     else:
-        """ we add the passed value to """
+        """ we add the passed value to the 'email_check' key."""
         print("the email is valid")
         new_obj['email_check'] = 'passed'
 
     return new_obj
 
 
+# this was done for testing (this is the case with all other files)
 if __name__  == "__main__":
     """ invoke the code directelly. """
     data_obj = {'email': 'example@email.com', 'password':'1234567', 'password_conf':'1234567'} # test data
