@@ -64,7 +64,8 @@ def interests_quationair():
 
     data = request.get_json()
 
-    final_res = recommended_movies(data)
+    final_res = recommended_movies(data) # in here we passe the drequest data to the function that has the algorithm for retreiving the results.
+    # the returned results are of type dict , with 'keywords_result' and 'liked_movies_result' as keys and list of resulted dicts as values.
     if len(final_res['keywords_result']) == 0:
         final_res.update({'keywords_status': 'False'})
     else:
