@@ -169,7 +169,7 @@ def recommended_movies(data):
 
     # the result will be the two generated lists.
 
-    # i thinks we eed to take relevant API keys from the result request, or we can just append them as is (the 2nd option is used for now.)
+    # i thinks we need to take relevant API keys from the result request, or we can just append them as is (the 2nd option is used for now.)
 
     #print("this is the keywords_result length {}, and the resut {}".format(len(keywords_result_list), keywords_result_list))
     #print('--------------')
