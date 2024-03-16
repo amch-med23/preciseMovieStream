@@ -92,7 +92,7 @@ def email_verify():
             # register the user_obj to the database table of 'users'.
             registration_status = register_user(user_obj)
             print(registration_status)
-            # after registering this user it's a goodidea to remove the ver_obj instance from the database
+            # after registering this user it's a good idea to remove the ver_obj instance from the database
             # this will help improve the app performence
 
             """ removing the instance will be done in here. """
@@ -124,7 +124,7 @@ def login():
     data = request.get_json()
     
     # check if the user credentials are ok.
-    login_creds_check_obj = login_creds_check(data) # this will check the credentials,in case of 'passed'(will return a login_token, this will be stored in the browser local_storage, and will be removed when logout[the token remove state can be sent back here, for the active sessions counting (number of current logedin users.)] )
+    login_creds_check_obj = login_creds_check(data) # this will check the credentials,in case of 'Passed'(will return a login_token, this will be stored in the browser local_storage, and will be removed when logout[the token remove state can be sent back here, for the active sessions counting (number of current logedin users.)] )
 
     print("status_obj is : {}".format(login_creds_check_obj)) # login_creds_check_obj will have two keys (login_creds_check, logn_token), values will be set by login_creds_check(data).
     return make_response(jsonify(login_creds_check_obj), 200)
@@ -132,7 +132,7 @@ def login():
 @app_views.route('/check_if_email_exist', methods=['POST'],
                  strict_slashes=False)
 def check_if_email_exist():
-    """ this checks if the provided email (for password reset) does exist in the Database"""
+    """ this checks if the provided email (for password reset) does exist in the Database """
     if not request.is_json:
         abort(404, 'Not a JSON')
     data = request.get_json()
@@ -159,7 +159,7 @@ def check_if_email_exist():
         return make_response(jsonify(email_availability_status), 200)
     else:
         email_availability_status['availability'] = 'False'
-        print('the provided email doesnt exist on the DataBase.')     
+        print("the provided email doesn't exist on the DataBase.")     
         return make_response(jsonify(email_availability_status), 200)
 
 @app_views.route('/reset_password', methods=['POST'], strict_slashes=False)
@@ -170,8 +170,8 @@ def reser_password_endpoint():
         abort(406, 'Not a JSON')
     data = request.get_json()
     print('we got: {}'.format(data))
-    if data['new_password'] != data['new_password_conf']:
+    if data['new_password'] != data['new_password_conf']: # checkin the password and the password_conf that was passed from the front-end.
         print('passwords dont match')
-        return make_response(jsonify({'password_check':'Failed', 'password_changed': 'null', 'token_status': 'null'}), 200)
-    changed_status = update_password(data)
+        return make_response(jsonify({'password_check':'Failed', 'password_changed': 'null', 'token_status': 'null'}), 200) 
+    changed_status = update_password(data) # this updated the password in the database and set a value of 'changed_status' based of the state(success, failed) of the operation
     return make_response(jsonify({'password_check':'Passed', 'password_changed': changed_status['password_changed'], 'token_status': changed_status['token_status']}), 200)
