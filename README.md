@@ -1,7 +1,7 @@
 # Precise Movie Stream (a movie recommendation system)
 ------------------------------------------------------
 
-[./docs/images/screenshoot.png]
+[hero screenshot] (./docs/images/screenshot.png)
 
 #### Introduction:
      This is a movie recomendatation system. the algorithm this app is based on is not a machine learing algorithm.
