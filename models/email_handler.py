@@ -44,18 +44,12 @@ def handle_email(session_id, user_email):
         # now the generation is done, we will create the 'ver_email_obj', and we will store it, then return it.
         ver_email_obj = {"session_id": str(session_id), "user_email": user_email, "ver_code": str(ver_code)}
 
-        # storing in th DataBase
+        # storing in the appropriat DataBase table.
         """ this saves the ver_email_obj in 'cer_code' table, 
-        we need to select by session id sinse the email can duplicated"""
+        we need to select by session id sinse the email can be duplicated (multiple unsuccessul email verificatin attempts)"""
         
         save_ver_code(ver_email_obj) 
         
-        """
-        with open('email_ver_list', 'w', encoding='utf-8') as f:
-                json_email_obj = json.dumps(ver_email_obj)
-                f.write(json_email_obj)
-        """
-
 
 if __name__ == "__main__":
         """ invoke directelly"""
