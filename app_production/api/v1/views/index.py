@@ -183,7 +183,7 @@ def check_if_email_exist():
 
 @app_views.route('/reset_password', methods=['POST'], strict_slashes=False)
 
-def reser_password_endpoint():
+def reset_password_endpoint():
     """ this is the password-reset api endpoint """
     if not request.is_json:
         abort(406, 'Not a JSON')
