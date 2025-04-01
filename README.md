@@ -4,7 +4,7 @@
 ![hero screenshot](./docs/images/screenshot.png)
 
 #### Introduction:
-     This is a movie recomendatation system. the algorithm this app is based on is not a machine learing algorithm.
+     This is a movie recomemndation system. the algorithm this app is based on is not a machine learing algorithm.
      instead we developed a search based algorithm. (it's planned to implemend a machine learning algorithm in the future).
 
 You can find the deployed app in here: http://pms.losag.tech
